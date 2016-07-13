@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  direction: MyString
+  size: 1
+  product: MyString
+  trade_date: 2016-07-05
+  price: 9.99
+  current_price: 9.99
+  user_id: 1
+
+two:
+  direction: MyString
+  size: 1
+  product: MyString
+  trade_date: 2016-07-05
+  price: 9.99
+  current_price: 9.99
+  user_id: 1

@@ -1,0 +1,74 @@
+/*element.style {
+}
+#whoweare-mask {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+* {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+}
+* {
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+Inherited from body
+Style Attribute {
+    cursor: auto;
+}
+html, body {
+    font-family: Helvetica,Arial,serif;
+    font-size: 12px;
+    margin: 0 0;
+    padding: 0 0;
+    color: #393939;
+    font-weight: normal;
+    height: 100%;
+    width: 100%;
+    background-color: #010101;
+    min-width: 800px;
+    overflow: hidden;
+}
+Inherited from html.js.flexbox.canvas.canvastext.webgl.no-touch.geolocation.postmessage.websqldatabase.indexeddb.hashchange.history.draganddrop.websockets.rgba.hsla.multiplebgs.backgroundsize.borderimage.borderradius.boxshadow.textshadow.opacity.cssanimations.csscolumns.cssgradients.cssreflections.csstransforms.csstransforms3d.csstransitions.fontface.generatedcontent.video.audio.localstorage.sessionstorage.webworkers.applicationcache.svg.inlinesvg.smil.svgclippaths
+html, body {
+    font-family: Helvetica,Arial,serif;
+    font-size: 12px;
+    margin: 0 0;
+    padding: 0 0;
+    color: #393939;
+    font-weight: normal;
+    height: 100%;
+    width: 100%;
+    background-color: #010101;
+    min-width: 800px;
+    overflow: hidden;
+}
+position0
+0margin‒
+‒border‒
+‒padding‒
+‒1208 × 150‒
+‒‒
+‒‒
+‒0
+0
+
+Console
+
+
+
+
+
+Preserve log
+﻿
+min.js:61 'webkitIndexedDB' is deprecated. Please use 'indexedDB' instead.
+﻿*/
