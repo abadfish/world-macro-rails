@@ -1,0 +1,16 @@
+{
+  "name": "world-macro-rails",
+  "scripts": {
+  },
+  "env": {
+    "m4s3r4t1": "johndeere"
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
