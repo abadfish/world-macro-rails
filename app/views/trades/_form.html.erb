@@ -1,0 +1,17 @@
+<div class="col-2">
+  <%= form_for @trade do |f| %>
+    <%= f.label :status %>
+    <%= f.text_field :status %><br />
+    <%= f.label :direction %>
+    <%= f.text_field :direction %><br />
+    <%= f.label :size %>
+    <%= f.text_field :size %><br />
+    <%= f.label :product %>
+    <%= f.text_field :product %><br />
+    <%= f.label :trade_date %>
+    <%= f.text_field :trade_date %><br />
+    <%= f.label :price %>
+    <%= f.text_field :price %><br />
+    <%= f.submit %>
+  <% end %>
+</div>

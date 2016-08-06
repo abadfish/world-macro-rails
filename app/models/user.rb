@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
   has_many :posts
-  has_many :trades
-  accepts_nested_attributes_for :trades
-  accepts_nested_attributes_for :posts
-  validates :username, :email, :password, presence: true
+  has_many :positions
+  has_many :trades, through: :positions
 
-  def trade_count
-    self.trades.count
-  end
+  enum role: [:normal, :vip, :admin]
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 end

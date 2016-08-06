@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :positions
   resources :posts
-  resources :users
+  resources :users, only: [:index, :edit,:show, :update, :destroy]
   resources :trades
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
+  
   root 'posts#index'
+  # devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
+  get 'about', to: 'static#about'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

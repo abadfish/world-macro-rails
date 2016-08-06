@@ -4,6 +4,7 @@ class TradesController < ApplicationController
   end
 
   def index
+    Trade.update_current_prices
     @trades = Trade.all
   end
 
@@ -13,7 +14,7 @@ class TradesController < ApplicationController
 
   def create
     @trade = Trade.create(trade_params)
-    redirect_to trade_params(@trade)
+    redirect_to trade_path(@trade)
   end
 
   def edit
@@ -25,7 +26,10 @@ class TradesController < ApplicationController
   end
 
   def destroy
-
+    @trade = Trade.find(params[:id])
+    @trade.destroy
+    flash[:notice] = "Position deleted."
+    redirect_to trades_path
   end
 
   private

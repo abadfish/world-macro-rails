@@ -10,7 +10,6 @@ class PositionsController < ApplicationController
 
   def new
     @position = Position.new
-    @position.trade_details.build()
   end
 
   def create
@@ -41,8 +40,7 @@ class PositionsController < ApplicationController
       :size,
       :product,
       :trade_date,
-      :price,
-      :current_price
+      :price
     ]
     )
   end

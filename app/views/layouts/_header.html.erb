@@ -1,0 +1,34 @@
+<div class="fintimes">
+  <header class="medium-fade">
+    <div class="wrapper">
+      <div id="logo" class="shadow">
+        <h1>WORLD MACRO</h1>
+        <h2>WORLD MACRO</h2>
+        <% if user_signed_in? %>
+          <div id="logout">
+            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          </div>
+          <% if user_signed_in? && current_user.admin? %>
+          <div id="new_post">
+            <%= link_to "New post", new_post_path %>
+          </div>
+          <% end %>
+        <% else %>
+          <div id="login">
+            <%= link_to "Login", new_user_session_path %>
+          </div>
+          <div id="signup">
+            <%= link_to "Signup", new_user_registration_path %>
+          </div>
+        <% end %>
+      </div>
+    </div><!-- .wrapper -->
+
+    <div id="navbar" class="light-fade">
+      <div class="wrapper">
+        <nav class="clearfix">
+          <a class="selected" href="/">Home</a><a href="/trades">Positions</a><a href="#">Insights</a><a href="#">Game</a><a href="#">Contact</a><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank">F.O.M.C.</a><a class="menu-icon">&#9776;</a>
+        </nav>
+      </div><!-- .wrapper -->
+    </div><!-- #navbar -->
+  </header>

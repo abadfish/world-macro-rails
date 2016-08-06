@@ -1,0 +1,37 @@
+<section class="col-5">
+  <h1>All Positions</h1> <h3><%= link_to "Add trade", new_trade_path %></h3>
+    <table>
+
+    <tr>
+      <th>Trade ID</th>
+      <th>Direction</th>
+      <th>SIZE</th>
+      <th>Product</th>
+      <th>Execution Price</th>
+      <th>Trade Date</th>
+      <th>Current Price</th>
+      <th>Status</th>
+      <th>P/L</th>
+    </tr>
+    <% @trades.each do |trade| %>
+    <tr>
+      <td><%= trade.id %>. </td>
+      <td><% if trade.direction.downcase == "buy" %>
+            Long
+          <% elsif trade.direction.downcase == "sell" %>
+            Short
+          <% end %> </td>
+      <td><%=trade.size %> </td>
+      <td><%= trade.product %> </td>
+      <td><%= trade.price %> </td>
+      <td><%= trade.trade_date %> </td>
+      <td><%= trade.current_price %> </td>
+      <td><%= trade.status %> </td>
+    </tr>
+      <% end %>
+    <br />
+  </table>
+</section>
+<section class="col-3">
+<h3>just putting something in here to test</h3>
+</section>

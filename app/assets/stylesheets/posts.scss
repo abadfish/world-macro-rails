@@ -64,7 +64,7 @@ th {
 
 input, textarea {
   display: block;
-  width: 100%;
+  width: auto;
   padding: 5px;
   margin-bottom: 5px;
   box-shadow: 0 3px 5px #ccc;
@@ -111,8 +111,8 @@ iframe {
 /*////////// BACKGROUNDS //////////*/
 
 .fintimes {
-  background: url('../images/home-bg.jpg') no-repeat center;
-  background: #d3d3d3;
+  // background: url('../images/home-bg.jpg') no-repeat center;
+  background: #f0f0f0;
   background-size: 100% 100%;
 }
 
@@ -150,9 +150,14 @@ img.grayscale {
   -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
 }
 
-img, video, audio, iframe, table, form {
+video, audio, iframe, table, form {
   width: 90%; /* IE */
   max-width: 90%; /* FF, Safari, Chrome */
+}
+
+.thumbnail {
+  float: left;
+  margin-right: 15px;
 }
 
 /*////////// FIXES //////////*/
@@ -191,16 +196,17 @@ img, video, audio, iframe, table, form {
 
 .col-2 {
   float: left;
-  width: 44%;
-  margin-left: 10%;
-  padding-left: 20px;
-  padding-right: 20px;
-  background: rgba(149,149,149, 0.6);
+  width: 53%;
+  margin-left: 20%;
+  padding-left: 30px;
+  padding-right: 0px;
+  // background: rgba(149,149,149, 0.6);
 }
 
 .col-4 {
   float: left;
-  width: 24%
+  width: 18%;
+  z-index: 5;
 }
 
 .col-3 p {
@@ -242,7 +248,6 @@ header {
   width: 100%;
   z-index: 2;
   text-align: center;
-  border-left: 1px solid #d3d3d3;
 }
 
 #navbar nav {
@@ -258,7 +263,6 @@ header {
   width: 16.6666667%;
   margin: 0;
   padding: 10px 0;
-  border-left: 1px solid #d3d3d3;
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
@@ -281,7 +285,6 @@ header {
   padding: 35px 0 0;
   background: rgb(0,0,0);
   width: 100%;
-  /*position: fixed;*/
 }
 
 #logo h1 {

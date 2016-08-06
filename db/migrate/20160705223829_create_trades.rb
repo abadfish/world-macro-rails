@@ -8,6 +8,7 @@ class CreateTrades < ActiveRecord::Migration
       t.decimal :price
       t.decimal :current_price
       t.integer :user_id
+      t.string :status, default: "open"
 
       t.timestamps null: false
     end
