@@ -1,5 +1,5 @@
 class Trade < ActiveRecord::Base
-  has_many :positions
+  belongs_to :position
   belongs_to :user
 
   before_create :update_current_prices

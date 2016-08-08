@@ -11,16 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160806045328) do
+ActiveRecord::Schema.define(version: 20160808185057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "position_trades", force: :cascade do |t|
+    t.integer  "position_id"
+    t.integer  "trade_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "positions", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "trade_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "p_direction"
+    t.integer  "aggregate_size"
+    t.string   "p_product"
+    t.decimal  "aggregate_price"
+    t.decimal  "gain_loss"
+    t.string   "status",          default: "open"
+    t.decimal  "p_current_price"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -50,6 +63,7 @@ ActiveRecord::Schema.define(version: 20160806045328) do
     t.string   "status",        default: "open"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.integer  "position_id"
   end
 
   create_table "users", force: :cascade do |t|

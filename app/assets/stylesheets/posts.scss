@@ -186,7 +186,6 @@ video, audio, iframe, table, form {
 .wrapper {
   width: 100%;
   margin: 0 auto;
-  /*background: rgb(129,129,129);*/
 }
 
 .col-1 {
@@ -200,13 +199,11 @@ video, audio, iframe, table, form {
   margin-left: 20%;
   padding-left: 30px;
   padding-right: 0px;
-  // background: rgba(149,149,149, 0.6);
 }
 
 .col-4 {
   float: left;
-  width: 18%;
-  z-index: 5;
+  width: 19%;
 }
 
 .col-3 p {

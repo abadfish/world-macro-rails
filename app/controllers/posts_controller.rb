@@ -7,7 +7,6 @@ class PostsController < ApplicationController
   end
 
   def index
-
     @posts = Post.all.sort_by do |post|
       post[:post_date]
     end
@@ -19,8 +18,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to post_path(@post)
+    @post = Post.new(post_params)
+    if authorize @post
+      @post.save
+      redirect_to post_path(@post)
+    else
+      flash[:notice] = "User not authorized."
+      redirect_to root_path
+    end
   end
 
   def edit

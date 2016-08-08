@@ -48,3 +48,24 @@ end
 <% @position.trade_details.each do |trade| %>
   <li><%= "#{trade.direction} #{trade.size} #{trade.product} #{trade.price} #{trade.trade_date} current_price: #{trade.current_price.to_f}" %></li>
 <% end %>
+
+
+POSITIONS index
+
+<% @positions.each do |position| %>
+<tr>
+  <td><%= position.id %>. </td>
+  <td><% if position.direction.downcase == "buy" %>
+        Long
+      <% elsif position.direction.downcase == "sell" %>
+        Short
+      <% end %> </td>
+  <td><%=position.size %> </td>
+  <td><%= position.product %> </td>
+  <td><%= position.price %> </td>
+  <td><%= position.position_date %> </td>
+  <td><%= position.current_price %> </td>
+  <td><%= position.status %> </td>
+</tr>
+  <% end %>
+<br />

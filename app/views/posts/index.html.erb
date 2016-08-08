@@ -1,6 +1,8 @@
 <div class="wrapper clearfix">
 
-  <section class="col-4">
+
+
+  <section class="col-4 first" id="news">
     <h4>
       <select>
         <option value="1">Bloomberg</option>
@@ -8,13 +10,14 @@
         <option value="3">CNN</option>
       </select>
       <a href="http://bloomberg.com">
-      Top Headlines</a></h4>
-      <ul>
+      Top Headlines</a></h4><br />
+
       <% Post.new.list_headlines.each do |k, v| %>
-        <li><a id="news" href="<%= v %>" target="_blank"><%= "#{k}" %></a></li><br />
+        <h5><a id="news" href="<%= v %>" target="_blank"><%= "#{k}" %></a></h5> --- <br />
       <% end %>
-      </ul>
+
   </section>
+
 
   <section class="col-2">
     <div class="post-spacer">

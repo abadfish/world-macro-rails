@@ -225,17 +225,20 @@ video, audio, iframe, table, form {
   margin-left: 20%;
   padding-left: 20px;
   padding-right: 20px;
-  /*background: rgba(149,149,149, 0.6);*/
 }
 
 .col-4 {
+  border-radius: 5px;
   float: left;
-  width: 18%;
+  width: 20%;
+  background: #d3d3d3;
+  padding: 10px;
+  z-index: 1;
 }
 
 .col-5 {
   text-align: center;
-  width: 70%;
+  width: 85%;
 }
 
 .col-3 p {
@@ -409,11 +412,14 @@ section {
 /*////////// NEWS LINKS //////////*/
 
 #news {
-  font-size: 14px;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: bolder;
+  color: #330000;
 }
 
 #news a:hover {
-  color: #cd3333;
+  color: red;
 }
 
 /*////////// DETAILS //////////*/

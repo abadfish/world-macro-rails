@@ -1,0 +1,35 @@
+<section class="col-5">
+
+    <table>
+      <h2>All Positions</h2>
+      <h3><%= link_to "Enter new position", new_trade_path %></h3>
+      <tr>
+        <th>Position ID</th>
+        <th>Direction</th>
+        <th>SIZE</th>
+        <th>Product</th>
+        <th>Agg. Execution Price</th>
+        <th>Current Price</th>
+        <th>P/L</th>
+      </tr>
+
+      <% @positions.each do |position| %>
+      <tr>
+        <td><%= link_to position.id, position_path(position) %>. </td>
+        <td><% if position.p_direction.downcase == "buy" %>
+              <%= "Long" %>
+              <% elsif position.p_direction.downcase == "sell" %>
+              <%= "Short" %>
+              <% end %></td>
+        <td><%=position.aggregate_size %> </td>
+        <td><%= position.p_product %> </td>
+        <td><%= position.aggregate_price %> </td>
+        <td><%= position.p_current_price %></td>
+        <td></td>
+        <td><%= link_to "Edit Position", position_path(position) %></td>
+        <td><%= link_to "Delete", position, method: :delete, data: { confirm: "Are you sure you want to delete this position?" } %></td>
+      </tr><br />
+      <% end %>
+    </table>
+    <%= link_to "View all trades", trades_path %>
+</section>
