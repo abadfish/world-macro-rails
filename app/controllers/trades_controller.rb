@@ -15,7 +15,7 @@ class TradesController < ApplicationController
   def create
     @trade = Trade.new(trade_params)
     @trade.user_id = current_user.id
-    if product_in_positions?(@trade.product) == []
+    if product_in_positions?(@trade.product).nil?
       @position = Position.new
       @position.p_direction = @trade.direction
       @position.aggregate_size = @trade.size
@@ -67,7 +67,7 @@ class TradesController < ApplicationController
   def product_in_positions?(product)
     @positions = Position.all
     @positions.open_positions.select do |p|
-      p.p_product.try(product)
+      p.p_product = product
     end
   end
 
@@ -78,7 +78,7 @@ class TradesController < ApplicationController
     else
       @position.aggregate_size -= @trade.size
     end
-    @position.aggregate_price = @trade.price/@position.size
+    (@position.aggregate_price += @trade.price)/@position.aggregate_size
     @position.p_current_price = @trade.current_price
     @position.save
   end
