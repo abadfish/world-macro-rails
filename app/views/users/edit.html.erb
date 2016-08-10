@@ -1,0 +1,6 @@
+<h3>Update user role for <%= @user.email %></h3>
+<%= form_for @user do |f| %>
+  <%= f.label "Role" %>
+  <%= f.text_field :role %>
+  <%= f.submit %>
+<% end %>

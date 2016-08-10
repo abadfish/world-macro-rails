@@ -69,3 +69,5 @@ POSITIONS index
 </tr>
   <% end %>
 <br />
+
+"/users/#{@user.id}/edit_rights"

@@ -21,6 +21,11 @@
 
   <section class="col-2">
     <div class="post-spacer">
+      <div id="posts">
+        <% if user_signed_in? && current_user.admin? %>
+          <%= link_to "ADD NEW POST", new_post_path %>
+        <% end %>
+      </div>
       <% @posts.each do |post| %>
         <h4 id="posts"><%= link_to post.title, post_path(post) %></h4>
         <div class="thumbnail">

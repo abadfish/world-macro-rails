@@ -241,6 +241,12 @@ video, audio, iframe, table, form {
   width: 85%;
 }
 
+.col-6 {
+  float: left;
+  text-align: left;
+  width: 65%;
+}
+
 .col-3 p {
   -moz-column-rule: 1px dotted #ccc;
   -webkit-column-rule: 1px dotted #ccc;
@@ -398,6 +404,18 @@ header {
   color: #ffffff;
 }
 
+#all_users a {
+  float: right;
+  margin-right: 210px;
+  margin-top: -30px;
+  color: #d3d3d3;
+  text-align: right;
+  text-decoration: none;
+}
+
+#all_users a:hover {
+  color: #ffffff;
+
 /*////////// MAIN SECTIONS //////////*/
 
 section {
@@ -433,7 +451,7 @@ section {
 }
 
 #posts a:hover {
-  color: white;
+  color: red;
 }
 
 #details {

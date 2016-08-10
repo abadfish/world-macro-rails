@@ -1,9 +1,4 @@
 class UsersController < ApplicationController
-  
-
-  def show
-    @user = User.find(params[:id])
-  end
 
   def index
     @users = User.all
@@ -22,18 +17,29 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    unless authorize @user
+      redirect_to users_path, alert: "Access denied."
+    end
+  end
+
   def edit
     @user = User.find(params[:id])
   end
 
   def update
     @user = User.find(params[:id])
+    @user.update(user_params)
     authorize @user
-    @user.update
+
+    redirect_to user_path(@user)
   end
 
+  private
 
-
-
+  def user_params
+    params.require(:user).permit(:role)
+  end
 
 end

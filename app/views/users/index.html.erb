@@ -1,0 +1,9 @@
+<section class="col-6">
+
+
+  <% @users.each.with_index(1) do |user, i| %>
+    <p><%= i %>. <%= link_to user.email, user_path(user) %><br />
+      <%= link_to "Edit", edit_user_registration_path %>
+    <%= link_to "Delete", cancel_user_registration_path %></p>
+  <% end %>
+</section>

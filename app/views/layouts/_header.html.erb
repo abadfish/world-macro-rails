@@ -7,11 +7,14 @@
         <% if user_signed_in? %>
           <div id="logout">
             <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+            <div id="new_post">
+              <%= link_to "View Profile", user_path(current_user) %>
+            </div>
           </div>
           <% if user_signed_in? && current_user.admin? %>
-          <div id="new_post">
-            <%= link_to "New post", new_post_path %>
-          </div>
+            <div id="all_users">
+              <%= link_to "All Users", users_path %>
+            </div>
           <% end %>
         <% else %>
           <div id="login">

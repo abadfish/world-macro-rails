@@ -1,14 +1,14 @@
 class PostPolicy < ApplicationPolicy
 
   def create?
-    user.admin?
+    user.admin? || user.vip?
   end
 
   def update?
-    user.admin?
+    user.admin? || user.vip?
   end
 
   def destroy?
-    user.admin?
+    user.admin? || user.vip?
   end
 end
