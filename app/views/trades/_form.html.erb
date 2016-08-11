@@ -1,4 +1,5 @@
 <div class="col-2">
+  <h2>Trade Entry</h2>
   <%= form_for @trade do |f| %>
     <%= f.label :status %>
     <%= f.text_field :status %><br />
@@ -8,10 +9,16 @@
     <%= f.text_field :size %><br />
     <%= f.label :product %>
     <%= f.text_field :product %><br />
-    <%= f.label :trade_date %>
-    <%= f.text_field :trade_date %><br />
     <%= f.label :price %>
     <%= f.text_field :price %><br />
+    <%= f.label :option_strategy %>
+    <%= f.text_field :option_strategy %><br />
+    <%= f.label :strategy_price %>
+    <%= f.text_field :strategy_price %><br />
+    <%= f.label :strategy_current_px %>
+    <%= f.text_field :strategy_current_px %><br />
+    <%= f.label :trade_date %>
+    <%= f.text_field :trade_date %><br />
     <%= f.submit %>
   <% end %>
 </div>

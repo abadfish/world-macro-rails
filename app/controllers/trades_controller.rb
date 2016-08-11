@@ -15,23 +15,24 @@ class TradesController < ApplicationController
   def create
     @trade = Trade.new(trade_params)
     @trade.user_id = current_user.id
-    if product_in_positions?(@trade.product).nil?
-      @position = Position.new
-      @position.p_direction = @trade.direction
-      @position.aggregate_size = @trade.size
-      @position.p_product = @trade.product
-      @position.aggregate_price = @trade.price
-      @position.p_current_price = @trade.current_price
-      @position.user_id = @trade.user_id
-      @position.save
-      @position.id = @trade.position_id
-      @trade.save
-    else
-      @position = Position.find_by(p_product: @trade.product)
-      @trade.position_id = @position.id
-      @trade.save
-      adjust_position(@trade)
-    end
+    # if product_in_positions?(@trade.product).nil?
+    #   @position = Position.new
+    #   @position.p_direction = @trade.direction
+    #   @position.aggregate_size = @trade.size
+    #   @position.p_product = @trade.product
+    #   @position.aggregate_price = @trade.price
+    #   @position.p_current_price = @trade.current_price
+    #   @position.user_id = @trade.user_id
+    #   @position.save
+    #   @position.id = @trade.position_id
+    #   @trade.save
+    # else
+    #   @position = Position.find_by(p_product: @trade.product)
+    #   @trade.position_id = @position.id
+    #   @trade.save
+    #   adjust_position(@trade)
+    # end
+    @trade.save
     redirect_to trade_path(@trade)
   end
 
@@ -41,6 +42,8 @@ class TradesController < ApplicationController
 
   def update
     @trade = Trade.find(params[:id])
+    @trade.update(trade_params)
+    redirect_to trades_path
   end
 
   def destroy
@@ -54,12 +57,16 @@ class TradesController < ApplicationController
 
   def trade_params
     params.require(:trade).permit(
+      :status,
       :direction,
       :size,
       :product,
-      :trade_date,
       :price,
       :current_price,
+      :option_strategy,
+      :strategy_price,
+      :strategy_current_px,
+      :trade_date,
       :user_id
     )
   end

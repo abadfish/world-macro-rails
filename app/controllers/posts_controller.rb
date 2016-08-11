@@ -11,6 +11,7 @@ class PostsController < ApplicationController
       post[:post_date]
     end
     @posts.reverse!
+    @news_headines = News.new("bloomberg").get_titles
   end
 
   def new
@@ -47,6 +48,16 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:notice] = "Post deleted."
     redirect_to posts_path
+  end
+
+  def get_news_source
+    @posts = Post.all.sort_by do |post|
+      post[:post_date]
+    end
+    @posts.reverse!
+    @news_headines = News.new(params[:news]).get_titles
+    @current = params[:news]
+    render :index
   end
 
   private

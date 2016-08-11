@@ -1,23 +1,16 @@
 <div class="wrapper clearfix">
 
-
-
   <section class="col-4 first" id="news">
-    <h4>
-      <select>
-        <option value="1">Bloomberg</option>
-        <option value="2">Reuters</option>
-        <option value="3">CNN</option>
-      </select>
-      <a href="http://bloomberg.com">
-      Top Headlines</a></h4><br />
+    <h3>Top Headlines</a></h3><br />
+    <%= form_tag '/news_source', method: 'get' do  %>
+      <%= select_tag "news" , options_for_select([["Bloomberg", "bloomberg"], ["Reuters", "reuters"], ["CNN", "cnn"], ["BBC News", "bbcnews"], ["WSJ", "thewallstreetjournal"]], (@current ||"bloomberg")) %>
+      <%= submit_tag "Submit" %>
+    <% end %>
 
-      <% Post.new.list_headlines.each do |k, v| %>
-        <h5><a id="news" href="<%= v %>" target="_blank"><%= "#{k}" %></a></h5> --- <br />
-      <% end %>
-
+    <% @news_headines.each do |k, v| %>
+      <h5><a id="news" href="<%= v %>" target="_blank"><%= "#{k}" %></a></h5> --- <br />
+    <% end %>
   </section>
-
 
   <section class="col-2">
     <div class="post-spacer">

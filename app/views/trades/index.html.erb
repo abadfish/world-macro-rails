@@ -1,6 +1,7 @@
-<section class="col-5">
-  <h1>All Trades</h1>
-  <h3><%= link_to "Add New trade", new_trade_path %> - <%= link_to "See all open positions", positions_path %></h3>
+<section class="col-7">
+  <h2>All Trades</h2>
+  <h3><%= link_to "Add New trade", new_trade_path %></h3>
+    <!-- - <%= link_to "See all open positions", positions_path %> -->
     <table>
 
     <tr>
@@ -9,8 +10,11 @@
       <th>SIZE</th>
       <th>Product</th>
       <th>Execution Price</th>
-      <th>Trade Date</th>
       <th>Current Price</th>
+      <th>Option Strategy</th>
+      <th>Strategy Execution Px</th>
+      <th>Strategy Current Px</th>
+      <th>Trade Date</th>
       <th>Status</th>
       <th>P/L</th>
     </tr>
@@ -21,9 +25,16 @@
       <td><%= trade.size %> </td>
       <td><%= trade.product %> </td>
       <td><%= trade.price %> </td>
-      <td><%= trade.trade_date %> </td>
       <td><%= trade.current_price %> </td>
+      <td><%= trade.option_strategy %></td>
+      <td><%= trade.strategy_price %></td>
+      <td><%= trade.strategy_current_px %></td>
+      <td><%= trade.trade_date %> </td>
       <td><%= trade.status %> </td>
+      <td><%=  %></td>
+      <td id="no-border"><%= link_to " Edit ", edit_trade_path(trade) %></td>
+      <td id="no-border"><%= link_to " Delete ", trade, method: :delete, data: { confirm: "Are you sure you want to delete this trade?" } %></td>
+      <br />
     </tr>
       <% end %>
     <br />

@@ -1,4 +1,4 @@
-<div class="col-2">
+<div class="col-5">
   <h3>Trade Details</h2>
     <table>
 
@@ -8,6 +8,10 @@
       <th>SIZE</th>
       <th>Product</th>
       <th>Execution Price</th>
+      <th>Current Px (Underlying)</th>
+      <th>Option Strategy</th>
+      <th>Strategy Execution Px</th>
+      <th>Current Px (Strategy)</th>
       <th>Trade Date</th>
       <th>P/L</th>
     </tr>
@@ -17,7 +21,12 @@
       <td><%= @trade.size %> </td>
       <td><%= @trade.product %> </td>
       <td><%= @trade.price %> </td>
+      <td><%= @trade.current_price %></td>
+      <td><%= @trade.option_strategy %></td>
+      <td><%= @trade.strategy_price %></td>
+      <td><%= @trade.strategy_current_px %></td>
       <td><%= @trade.trade_date %> </td>
+      <td></td>
     </tr>
     <br />
   </table>

@@ -68,6 +68,11 @@ th, td {
   border-bottom: 1px solid #ccc;
 }
 
+#no-border {
+  padding: 0 10px;
+  border:none;
+}
+
 th {
   background: #555;
   color: white;
@@ -245,6 +250,12 @@ video, audio, iframe, table, form {
   float: left;
   text-align: left;
   width: 65%;
+}
+
+.col-7 {
+  float: left;
+  text-align: center;
+  width: 100%;
 }
 
 .col-3 p {

@@ -1,14 +1,10 @@
-current price on positions index page
-status on positions index page
+1. Login via Twitter
+2. Comments join table
+3. Validations
+
 
 
 Total P/L on home page
-
-Need authentication
-
-if is_logged_in? can delete trades if they are yours
-
-can delete posts if they are yours
 
 Flexible order for posts
 -searchable
@@ -27,28 +23,6 @@ class User < ActiveRecord::Base
     self.trades.count
   end
 end
-
-class PictureUploader < CarrierWave::Uploader::Base
-  include Cloudinary::CarrierWave
-
-
-  process :convert => 'png'
-  process :tags => ['post_picture']
-
-
-
-  version :thumbnail do
-    resize_to_fit(50, 50)
-  end
-
-
-
-end
-
-<% @position.trade_details.each do |trade| %>
-  <li><%= "#{trade.direction} #{trade.size} #{trade.product} #{trade.price} #{trade.trade_date} current_price: #{trade.current_price.to_f}" %></li>
-<% end %>
-
 
 POSITIONS index
 

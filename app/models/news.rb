@@ -1,8 +1,8 @@
 require 'json'
 class News
 
-  def initialize
-    @url = 'https://newsapi.org/v1/articles?source=bloomberg&sortBy=top&apiKey=91cf8a822e4245a7a289affac3da132c'
+  def initialize(news_source)
+    @url = "https://newsapi.org/v1/articles?source=#{news_source}&sortBy=top&apiKey=91cf8a822e4245a7a289affac3da132c"
   end
 
   def get_titles

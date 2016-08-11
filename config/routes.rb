@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   devise_for :views
   devise_for :users
   resources :positions
@@ -9,5 +10,6 @@ Rails.application.routes.draw do
   root 'posts#index'
 
   get 'about', to: 'static#about'
+  get 'news_source', to: 'posts#get_news_source'
 
 end
