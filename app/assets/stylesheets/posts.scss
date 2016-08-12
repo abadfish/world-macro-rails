@@ -1,3 +1,7 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
 @import url(http://fonts.googleapis.com/css?family=Clicker+Script);
 
 @import url(https://fonts.googleapis.com/css?family=Bungee+Hairline|Slabo+27px);
@@ -107,6 +111,7 @@ iframe {
 /*////////// BACKGROUNDS //////////*/
 
 .fintimes {
+  // background: url('../images/home-bg.jpg') no-repeat center;
   background: #f0f0f0;
   background-size: 100% 100%;
 }
@@ -119,6 +124,7 @@ iframe {
   background: -o-linear-gradient(top,  #efefef 0%,#ffffff 24%,#ffffff 68%,#dddddd 100%); /* Opera 11.10+ */
   background: -ms-linear-gradient(top,  #efefef 0%,#ffffff 24%,#ffffff 68%,#dddddd 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #efefef 0%,#ffffff 24%,#ffffff 68%,#dddddd 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
 }
 
 .medium-fade {

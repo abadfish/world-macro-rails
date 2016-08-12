@@ -4,8 +4,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @posts = Post.all
-    @post.comments.build()
-    # active record collection proxy
   end
 
   def index
@@ -23,8 +21,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @comment = @post.comments.create(comment_params)
-    @comment.user_id = current_user.id
+
     if authorize @post
       @post.save
       redirect_to post_path(@post)
