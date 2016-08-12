@@ -3,6 +3,8 @@
 3. Validations
 
 
+-making Porducts uppercase is talked about in
+ActiveRecord Lifecycle methods
 
 Total P/L on home page
 

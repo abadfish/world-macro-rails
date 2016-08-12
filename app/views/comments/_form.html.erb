@@ -1,0 +1,9 @@
+<%= form_for :comment, url: '/comments' do |f| %>
+<%= f.hidden_field :post_id, :value => @post.id %>
+<%= f.hidden_field :user_id, :value => current_user.id %>
+
+<!-- pass in post, find out if comment should be a symbol -->
+  <h4><%= f.label "Leave a comment:" %></h4>
+  <%= f.text_area :content %>
+  <%= f.submit "Submit "%>
+<% end %>
