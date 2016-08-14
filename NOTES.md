@@ -1,25 +1,22 @@
 1. Login via Twitter
-2. Comments join table
-3. Validations
+DONE 2. Comments join table
+DONE 3. Tags-custom association methods
+DONE 4. Validations
 
+5. Need Terms of service and privacy policy URL's
+ -static pages
+ -add links to footer
 
--making Porducts uppercase is talked about in
+-making Products uppercase is talked about in
 ActiveRecord Lifecycle methods
 
 Total P/L on home page
 
 Flexible order for posts
--searchable
+-searchable by tag
 -summary for list
 -be able to add picture files to posts
 
-
-class User < ActiveRecord::Base
-  has_many :posts
-  has_many :trades
-  accepts_nested_attributes_for :trades
-  accepts_nested_attributes_for :posts
-  validates :username, :email, :password, presence: true
 
   def trade_count
     self.trades.count

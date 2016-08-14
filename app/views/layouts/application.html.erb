@@ -19,10 +19,15 @@
       @import 'https://fonts.googleapis.com/css?family=Audiowide';
       </style>
   </head>
-
-  <body>
-    <%= render partial: 'layouts/header' %>
-    <%= yield %>
-
-  </body>
+  <div id="container">
+    <body>
+      <div class="fintimes">
+        <div class="wrapper clearfix">
+          <%= render partial: 'layouts/header' %>
+          <%= yield %>
+        </div>
+      </div>
+    </body>
+  </div>
+  <%= render partial: 'layouts/footer' %>
 </html>

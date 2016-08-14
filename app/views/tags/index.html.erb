@@ -1,0 +1,10 @@
+<div class="col-6">
+  <% @tags.each do |tag| %>
+    <h4>Posts with <%= tag.name %> tag: </h4>
+    <ul>
+      <% tag.posts.each do |post| %>
+        <li><%= post.title %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

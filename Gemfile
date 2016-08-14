@@ -32,6 +32,9 @@ gem 'pundit'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Use omniauth to log in with twitter login
+gem 'omniauth'
+gem 'omniauth-twitter'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

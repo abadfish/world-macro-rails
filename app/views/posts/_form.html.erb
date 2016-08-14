@@ -2,6 +2,14 @@
 
 
   <%= form_for @post, html: { multipart: true } do |f| %>
+
+    <%= f.label :tag_name %>
+    <%= f.text_field :tag_name, list: "tags_autocomplete" %>
+      <datalist id="tags_autocomplete">
+      <%= Tag.all.each do |tag| %>
+        <option value="<%= tag.name %>">
+      <% end %>
+      </datalist><br />
     <%= f.label :title %><br />
     <%= f.text_field :title %><br />
     <%= f.label :summary %><br />
