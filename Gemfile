@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
+gem 'activerecord-session_store'
 # gem 'sqlite3'
 # use sqlite3 for dev and pg for production
 gem 'pg'

@@ -14,8 +14,8 @@ Total P/L on home page
 
 Flexible order for posts
 -searchable by tag
--summary for list
--be able to add picture files to posts
+DONE -summary for list
+DONE -be able to add picture files to posts
 
 
   def trade_count

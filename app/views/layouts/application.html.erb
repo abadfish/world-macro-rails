@@ -15,6 +15,22 @@
     <link rel="stylesheet" href="/stylesheets/css/responsive.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/css/responsive.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+    <script>window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+
+      return t;
+      }(document, "script", "twitter-wjs"));</script>
     <style>
       @import 'https://fonts.googleapis.com/css?family=Audiowide';
       </style>
