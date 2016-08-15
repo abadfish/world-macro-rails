@@ -1,7 +1,7 @@
 <div class="wrapper clearfix">
 
   <section class="col-4 first" id="news">
-    <h3>Top Headlines</a></h3><br />
+    <h3>Top Headlines from: </a></h3><br />
     <%= form_tag '/news_source', method: 'get' do  %>
       <%= select_tag "news" , options_for_select([["Bloomberg", "bloomberg"], ["Reuters", "reuters"], ["CNN", "cnn"], ["BBC News", "bbcnews"], ["WSJ", "thewallstreetjournal"]], (@current ||"bloomberg")) %>
       <%= submit_tag "Submit" %>
@@ -18,6 +18,11 @@
         <% if user_signed_in? && current_user.admin? %>
           <%= link_to "ADD NEW POST", new_post_path %>
         <% end %>
+
+        <%= form_tag("/posts", method: "get") do %>
+          <p>Filter by topic: <%= select_tag "tag", options_from_collection_for_select(@tags, "id", "name"), include_blank: true %> <%= submit_tag "Filter" %></p>
+        <% end %>
+
       </div>
       <% @posts.each do |post| %>
         <h4 id="posts"><%= link_to post.title, post_path(post) %></h4>

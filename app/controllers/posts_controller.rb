@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  helper_method :params
 
   def show
     @post = Post.find(params[:id])
@@ -12,6 +12,12 @@ class PostsController < ApplicationController
     end
     @posts.reverse!
     @news_headines = News.new("bloomberg").get_titles
+    @tags = Tag.all
+    if !params[:tag].blank?
+      @posts = Post.where(tag: params[:tag])
+    else
+      @posts
+    end
   end
 
   def new
