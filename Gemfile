@@ -25,8 +25,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 #use carrierwave and paperclip for image management
+gem 'aws-sdk'
 gem 'carrierwave'
-gem 'paperclip', :git => "http://github.com/thoughtbot/paperclip.git"
+gem 'paperclip', '>= 5.0.0'
 #use Devise and Pundit for authentication and role management
 gem 'devise'
 gem 'pundit'
