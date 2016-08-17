@@ -21,4 +21,8 @@ class Post < ActiveRecord::Base
   def tag_name
     self.tag.name if self.tag
   end
+
+  def self.with_tag(tag_id)
+    where(tag: tag_id)
+  end
 end

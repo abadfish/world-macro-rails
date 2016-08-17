@@ -1,0 +1,14 @@
+<%= form_for @contributor do |f| %>
+  Username: <%= f.text_field :username %>
+  Email: <%= f.text_field :email %><br />
+  <%= f.fields_for :insights do |i| %>
+
+    <%= i.label :title %>
+    <%= i.text_field :title %><br />
+    <%= i.label :content %>
+    <%= i.text_area :content %><br />
+
+
+  <% end %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,13 @@
+<h2> <%= @contributor.username %></h2>
+
+<h3>Insights</h2>
+
+<ul>
+
+
+  <% @contributor.insights.each do |insight| %>
+    <li><%= insight.title %>
+    <%= insight.content %></li><br />
+
+  <% end %>
+</ul>

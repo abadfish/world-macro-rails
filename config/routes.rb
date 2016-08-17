@@ -16,4 +16,13 @@ Rails.application.routes.draw do
   get 'about', to: 'static#about'
   get 'news_source', to: 'posts#get_news_source'
 
+  resources :contributors, only: [:show] do
+    resources :insights, only: [:show, :index]
+  end
+
+  resources :insights, only: [:index, :show, :new, :create, :edit, :update]
+
+  # get 'contributors/:id/insights', to: 'contributors#insights_index'
+  # get 'contributors/:id/insights/:insight_id', to: 'contributors#insight'
+
 end

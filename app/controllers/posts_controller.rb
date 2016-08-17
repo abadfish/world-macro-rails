@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  helper_method :params
 
   def show
     @post = Post.find(params[:id])
@@ -14,7 +13,7 @@ class PostsController < ApplicationController
     @news_headines = News.new("bloomberg").get_titles
     @tags = Tag.all
     if !params[:tag].blank?
-      @posts = Post.where(tag: params[:tag])
+      @posts = Post.with_tag(params[:tag])
     else
       @posts
     end
@@ -59,10 +58,11 @@ class PostsController < ApplicationController
   end
 
   def get_news_source
-    @posts = Post.all.sort_by do |post|
-      post[:post_date]
-    end
-    @posts.reverse!
+    # require "pry" ; binding.pry
+    # @posts = Post.all.sort_by do |post|
+    #   post[:post_date]
+    # end
+    # @posts.reverse!
     @news_headines = News.new(params[:news]).get_titles
     @current = params[:news]
     render :index
