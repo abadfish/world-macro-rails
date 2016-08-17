@@ -2,14 +2,7 @@
 
   <section class="col-4 first" id="news">
     <h3>Top Headlines from: </a></h3><br />
-    <%= form_tag '/news_source', method: 'get' do  %>
-      <%= select_tag "news" , options_for_select([["Bloomberg", "bloomberg"], ["Reuters", "reuters"], ["CNN", "cnn"], ["BBC News", "bbcnews"], ["WSJ", "thewallstreetjournal"]], (@current ||"bloomberg")) %>
-      <%= submit_tag "Submit" %>
-    <% end %>
-
-    <% @news_headines.each do |k, v| %>
-      <h5><a id="news" href="<%= v %>" target="_blank"><%= "#{k}" %></a></h5> --- <br />
-    <% end %>
+    <%= render partial: '/news/news', local: {current: @current} %>
   </section>
 
   <section class="col-2">
@@ -24,13 +17,24 @@
         <% end %>
 
       </div>
-      <% @posts.each do |post| %>
-        <h4 id="posts"><%= link_to post.title, post_path(post) %></h4>
-        <div class="thumbnail">
-          <%= link_to image_tag(post.image.url(:med)), post.image.url %>
-        </div>
-        <h5><%= post.summary %><br>
-        <%= post.post_date %></h5><br />
+      <% if user_signed_in? %>
+        <% @posts.each do |post| %>
+          <h4 id="posts"><%= link_to post.title, post_path(post) %></h4>
+          <div class="thumbnail">
+            <%= link_to image_tag(post.image.url(:med)), post.image.url %>
+          </div>
+          <h5><%= post.summary %><br>
+          <%= post.post_date %></h5><br />
+        <% end %>
+      <% else %>
+        <% @posts.each do |post| %>
+          <h4 id="posts"><%=post.title %></h4>
+          <div class="thumbnail">
+            <%= image_tag(post.image.url(:med)) %>
+          </div>
+          <h5><%= post.summary %><br>
+          <%= post.post_date %></h5><br />
+        <% end %>
       <% end %>
     </div>
   </section>

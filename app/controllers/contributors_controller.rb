@@ -10,7 +10,6 @@ class ContributorsController < ApplicationController
   def new
     @contributor = Contributor.new
     @contributor.insights.build()
-    @contributor.insights.build()
   end
 
   def create

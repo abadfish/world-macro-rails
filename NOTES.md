@@ -44,3 +44,8 @@ POSITIONS index
 <br />
 
 "/users/#{@user.id}/edit_rights"
+
+
+<!-- <%= form_tag("/posts", method: "get") do %>
+  <p>Filter by topic: <%= select_tag "tag", options_from_collection_for_select(@tags, "id", "name"), include_blank: true %> <%= submit_tag "Filter" %></p>
+<% end %> -->

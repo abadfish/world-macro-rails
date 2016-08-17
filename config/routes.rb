@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     resources :insights, only: [:show, :index]
   end
 
+  resources :contributors
+
   resources :insights, only: [:index, :show, :new, :create, :edit, :update]
 
   # get 'contributors/:id/insights', to: 'contributors#insights_index'
