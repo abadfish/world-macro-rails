@@ -22,9 +22,8 @@ Fork the Project
 
 Fork project on Github and check out your copy.
 
-git clone https://github.com/contributor/cloudinary_gem.git
-cd cloudinary_gem
-git remote add upstream https://github.com/cloudinary/cloudinary_gem.git
+git clone https://github.com/contributor/world-macro.git
+git remote add upstream https://github.com/cloudinary/world_macro.git
 Create a Topic Branch
 
 Make sure your fork is up-to-date and create a topic branch for your feature or bug fix.
@@ -73,7 +72,7 @@ Push
 git push origin my-feature-branch
 Make a Pull Request
 
-Go to https://github.com/contributor/cloudinary_gem and select your feature branch. Click the 'Pull Request' button and fill out the form. Pull requests are usually reviewed within a few days. Ensure the PR description clearly describes the problem and solution. Include the relevant issue number if applicable.
+Go to https://github.com/contributor/world-macro and select your feature branch. Click the 'Pull Request' button and fill out the form. Pull requests are usually reviewed within a few days. Ensure the PR description clearly describes the problem and solution. Include the relevant issue number if applicable.
 
 Rebase
 
