@@ -1,3 +1,3 @@
 class Insight < ActiveRecord::Base
-  belongs_to :contributor
+  belongs_to :user
 end

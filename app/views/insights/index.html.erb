@@ -1,0 +1,13 @@
+<div class="col-6">
+  <% if user_signed_in? %>
+    <%= link_to "Add New Commentary", new_user_insight_path(current_user) %>
+  <% end %><br />
+
+  <br>
+  <ul>
+    <% @insights.each do |i| %>
+      <li><h5><%= i.title %><h5>
+      <%= i.content %></li>
+    <% end %>
+  </ul>
+</div>

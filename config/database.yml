@@ -1,9 +1,4 @@
-# Postgresql is used because Heroku does not support sqlite3
-#   gem install pg
-#
-#   Ensure the postgresql gem is defined in your Gemfile
-#   gem 'pg'
-#
+
 default: &default
   adapter: postgresql
   pool: 5

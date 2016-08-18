@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.insights.build()
   end
 
   def create
@@ -35,10 +36,23 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def insights_index
+    @user = Contributor.find(params :id)
+    @insights = @user.insights
+    render template: 'insights/index'
+  end
+
+  def insight
+   @user = User.find(params[:id])
+   @insight = Insight.find(params[:insight_id])
+   render template: 'insights/show'
+ end
+
   private
 
   def user_params
-    params.require(:user).permit(:role)
+    params.require(:user).permit(:role, :insights_attributes =>[
+      :title, :content, :contributor_id])
   end
 
 end

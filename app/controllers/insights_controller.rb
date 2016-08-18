@@ -1,18 +1,27 @@
 class InsightsController < ApplicationController
 
+  def new
+    @user = current_user
+    current_user.insights.build
+  end
+
+  def create
+    render :insights
+  end
+
   def index
-    if params[:contributor_id]
-      @insights = Contributor.find(params[:contributor_id]).insights
+    if params[:user_id]
+      @insights = User.find(params[:user_id]).insights
     else
       @insights = Insight.all
     end
   end
 
   def show
-    if params[:contributor_id]
-      @post = Insight.find(params[:id])
+    if params[:user_id]
+      @insight = Insight.find(params[:id])
     else
-      @post = Insight.find(params[:id])
+      @insight = Insight.find(params[:id])
     end
   end
 end
