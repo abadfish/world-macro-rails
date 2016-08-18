@@ -1,6 +1,6 @@
 <h3>Update user role for <%= @user.email %></h3>
 <%= form_for @user do |f| %>
-  <%= f.label "Role" %>
-  <%= f.text_field :role %>
-  <%= f.submit %>
+  <%= f.label :role %>
+  <%= f.select(:role, options_for_select([["normal", "normal"], ["vip", "vip"], ["admin", "admin"]])) %>
+  <%= f.submit("Update") %>
 <% end %>
