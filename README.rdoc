@@ -1,28 +1,108 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to World Macro. Finally you can make just one stop for all your macroeconomic trading information. The app provides lists of headlines from major news sources such as Bloomberg, TR, CNN, BBC, and WSJ, lists trade ideas along with corresponding charts, has a twitter feed, and has pages for both tracking trades and sharing commentary.
 
-Things you may want to cover:
+* This app is built in Ruby version 2.2.3
+* System dependencies are outlined in the gem file. You will need to run 'bundle install' in your terminal. See below.
+* Configuration:
+  -This app requires PostgreSQL for databasing
+  -If you are running OSX you can get the app at http://postgresapp.com/
+* Database creation and initialization steps are as follows:
+  -To run this app at http://localhost:3000 Postgres must be running and you need to run these 4 commands after you cd into the directory of the app:
+  1. bundle install
+  2. bundle exec rake db:create
+  3. bundle exec rake db:migrate
+  4. bundle exec rails server
 
-* Ruby version
+## Contributions #######################################################################
+Contributor Instructions:
+-We welcome improvements and contributions to the app. If you are interested in contributing or would like to report an issue, please open a GitHub issue describing the benefits (and possible drawbacks) of the requested feature.
 
-* System dependencies
+Fork the Project
 
-* Configuration
+Fork project on Github and check out your copy.
 
-* Database creation
+git clone https://github.com/contributor/cloudinary_gem.git
+cd cloudinary_gem
+git remote add upstream https://github.com/cloudinary/cloudinary_gem.git
+Create a Topic Branch
 
-* Database initialization
+Make sure your fork is up-to-date and create a topic branch for your feature or bug fix.
 
-* How to run the test suite
+git checkout master
+git pull upstream master
+git checkout -b my-feature-branch
+Rebase
 
-* Services (job queues, cache servers, search engines, etc.)
+If you've been working on a change for a while, rebase with upstream/master.
 
-* Deployment instructions
+git fetch upstream
+git rebase upstream/master
+git push origin my-feature-branch -f
+Write Tests
 
-* ...
+Try to write a test that reproduces the problem you're trying to fix or describes a feature that you want to build. Add to test.
+
+We definitely appreciate pull requests that highlight or reproduce a problem, even without a fix.
+
+Write Code
+
+Implement your feature or bug fix. Follow the following style guide. Make sure that your code works both with and without Rails The code should support:
+
+Ruby >= 1.8
+Rails >= 3.0
+Make sure that bundle exec rake test completes without errors.
+
+Write Documentation
+
+Document any external behavior in the README.
+
+Commit Changes
+
+Make sure git knows your name and email address:
+
+git config --global user.name "Your Name"
+git config --global user.email "contributor@example.com"
+Writing good commit logs is important. A commit log should describe what changed and why.
+
+git add ...
+git commit
+Please squash your commits into a single commit when appropriate. This simplifies future cherry picks and keeps the git log clean.
+Push
+
+git push origin my-feature-branch
+Make a Pull Request
+
+Go to https://github.com/contributor/cloudinary_gem and select your feature branch. Click the 'Pull Request' button and fill out the form. Pull requests are usually reviewed within a few days. Ensure the PR description clearly describes the problem and solution. Include the relevant issue number if applicable.
+
+Rebase
+
+If you've been working on a change for a while, rebase with upstream/master.
+
+git fetch upstream
+git rebase upstream/master
+git push origin my-feature-branch -f
+Check on Your Pull Request
+
+Go back to your pull request after a few minutes and see whether it passed muster with Travis-CI. Everything should look green, otherwise fix issues and amend your commit as described above.
+
+Be Patient
+
+It's likely that your change will not be merged and that the nitpicky maintainers will ask you to do more, or fix seemingly benign problems. Hang on there!
+
+Thank You
+
+Please do know that we really appreciate and value your time and work. We love you, really.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## License #######################################################################
+
+Released under the MIT license.
+The MIT License (MIT)
+Copyright (c) 2016 World Macro, LLC
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
