@@ -3,9 +3,11 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :posts, through: :comments
   has_many :insights
-  accepts_nested_attributes_for :insights
   has_many :positions
   has_many :trades
+  accepts_nested_attributes_for :insights
+
+  validates_uniqueness_of :email
 
   enum role: [:normal, :vip, :admin]
   # Include default devise modules. Others available are:

@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :tweets
   resources :positions
   resources :posts
-  # resources :users, only: [:index, :edit,:show, :update, :destroy]
   resources :trades
   resources :comments
   resources :tags, only: [:index]
@@ -20,11 +19,7 @@ Rails.application.routes.draw do
     resources :insights, only: [:new, :create, :show, :index]
   end
 
-
-
   resources :insights
-
-  # get 'users/:id/insights', to: 'user#insights_index'
-  # get 'users/:id/insights/:insight_id', to: 'users#insight'
+  resources :charges
 
 end
