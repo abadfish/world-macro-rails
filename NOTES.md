@@ -49,3 +49,15 @@ POSITIONS index
 <!-- <%= form_tag("/posts", method: "get") do %>
   <p>Filter by topic: <%= select_tag "tag", options_from_collection_for_select(@tags, "id", "name"), include_blank: true %> <%= submit_tag "Filter" %></p>
 <% end %> -->
+
+<!-- from ApplicationController -->
+
+before_filter :configure_permitted_parameters, if: :devise_controller?
+
+protected
+
+def configure_permitted_parameters
+  #This allows the attributes to be accessible at sign up. I had to add email and password after adding token.
+  devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :stripe_card_token, :email, :password) }
+  devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :stripe_card_token) }
+end

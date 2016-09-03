@@ -20,5 +20,12 @@ class TradeData
     h["Last"]
   end
 
+  # will not work with current API because descriptions are not uniform
+  # def get_tick_value(product)
+  #   t = description.scan(/\Tick Size.*/)
+  #   t.gsub(/[^\d]/, '')
+  #
+  # end
+
 
 end

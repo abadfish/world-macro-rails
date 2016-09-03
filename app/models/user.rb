@@ -16,6 +16,18 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:twitter]
 
+  after_create :create_a_customer
+
+  def create_a_customer
+    Stripe.api_key = "sk_test_hq6mBKXL38IXnCHZmtgy6NR2"
+    token = self.stripe_card_token
+    customer = Stripe::Customer.create(
+				:card => token,
+				:plan => 120,
+				:email => self.email
+		)
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email

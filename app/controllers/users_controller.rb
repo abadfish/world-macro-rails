@@ -51,7 +51,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:role, :insights_attributes =>[
+    params.require(:user).permit(:role, :stripe_card_token, :insights_attributes =>[
       :title, :content, :contributor_id])
   end
 
