@@ -31,9 +31,14 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   Paperclip.options[:command_path] = "/usr/local/bin/convert"
-  # config.paperclip_defaults = {
-  #   :storage => :s3,
-  #   :s3_host_name => 'REMOVE_THIS_LINE_IF_UNNECESSARY',
-  #   :bucket => 'world-macro-dev'
-  # }
+
+  config.paperclip_defaults = {
+  storage: :s3,
+    s3_credentials: {
+      bucket: ENV.fetch('elasticbeanstalk-us-east-1-471698247213'),
+      access_key_id: ENV.fetch('AKIAJP4NVRZEAEP36A6Q'),
+      secret_access_key: ENV.fetch('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'),
+      s3_region: ENV.fetch('us-east-1'),
+    }
+  }
 end

@@ -10,6 +10,7 @@ class TagsController < ApplicationController
 
   def create
     @tag = Tag.create(tag_params)
+    
   end
 
   def show

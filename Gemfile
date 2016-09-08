@@ -17,9 +17,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'carrierwave'
 gem 'paperclip', '>= 5.0.0'
+gem 'aws-sdk', '~> 2.3'
 gem 'devise'
 gem 'pundit'
-# gem 'bcrypt', '~> 3.1.7'
 
 # Use omniauth to log in with twitter login
 gem 'omniauth'
