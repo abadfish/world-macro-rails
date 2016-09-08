@@ -36,8 +36,8 @@ Rails.application.configure do
   storage: :s3,
     s3_credentials: {
       bucket: ENV.fetch('elasticbeanstalk-us-east-1-471698247213'),
-      access_key_id: ENV.fetch('AKIAIICII7UPEJUAGL4A'),
-      secret_access_key: ENV.fetch('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'),
+      access_key_id: ENV.fetch('AKIAIZNXGTL7O72IL3NA'),
+      secret_access_key: ENV.fetch('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'),
       s3_region: ENV.fetch('us-east-1'),
     }
   }
