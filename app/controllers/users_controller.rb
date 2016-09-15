@@ -36,6 +36,11 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+  end
+
   def insights_index
     @user = Contributor.find(params :id)
     @insights = @user.insights

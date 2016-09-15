@@ -6,7 +6,7 @@ class ChargesController < ApplicationController
   def create
   # Amount in cents
     @amount = 500
-
+    binding.pry
     customer = Stripe::Customer.create(
       :email => 'example@stripe.com',
       :source  => params[:stripeToken]
@@ -15,7 +15,6 @@ class ChargesController < ApplicationController
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => @amount,
-      :description => 'World Macro subscriber',
       :currency    => 'usd'
     )
 
