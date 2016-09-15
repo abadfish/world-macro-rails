@@ -22,9 +22,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
        :description => 'World Macro monthly subscription',
        :currency    => 'usd'
      )
-    raise params
     #binding.pry
-    user.uid = customer.id
+    # user.stripe_customer_id = customer.id
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
