@@ -635,7 +635,7 @@ footer.bg-dark li,
   margin-top: -20px;
   top: 0;
   left: 0;
-  background: url(blue-city-chart.png);
+  background: url(<%= asset_path 'blue-city-chart.png' %>);
   background-size: cover;
   opacity: 0.8;
   z-index: 2;
