@@ -220,6 +220,10 @@ video, audio, iframe, table, form {
 
 /*/////// LAYOUT ////////*/
 
+.about {
+  margin-top: 40px;
+}
+
 .wrapper {
   width: 100%;
   margin: 0 auto;
@@ -478,6 +482,7 @@ section {
 
 .post-spacer {
   margin-bottom: 20px;
+  margin-left: 2%;
 }
 
 #posts a{

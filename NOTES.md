@@ -18,6 +18,15 @@ DONE -summary for list
 DONE -be able to add picture files to posts
 
 
+--Button to Add more charts
+--password update confirmation
+--logo
+--Ad showing
+--Books for each product group
+
+-Add STIRTS
+
+
   def trade_count
     self.trades.count
   end

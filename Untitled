@@ -1,0 +1,20 @@
+class Animal
+
+  def talk
+    puts "I'm talking"
+  end
+
+end
+
+
+class Human < Animal
+
+  def talk
+
+    puts "And I'm intelligent"
+    super
+  end
+end
+
+avi = Human.new
+avi.talk

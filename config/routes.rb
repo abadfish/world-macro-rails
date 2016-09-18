@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post 'comments', to: 'comments#create'
 
   get 'about', to: 'static#about'
+  get 'contact', to: 'static#contact'
   get 'news_source', to: 'posts#get_news_source'
 
   resources :users, only: [:index, :edit,:show, :update, :destroy] do
