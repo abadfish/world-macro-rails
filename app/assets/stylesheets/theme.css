@@ -577,7 +577,7 @@ footer {
   overflow: hidden;
 }
 footer {
-  padding: 72px 0;
+  padding: 10px 0;
 }
 .fullscreen {
   height: 100vh;
@@ -5215,6 +5215,12 @@ footer.bg-dark a {
 }
 .pt240 {
   padding-top: 240px;
+}
+.ml8 {
+  margin-left: 8px;
+}
+.ml20 {
+  margin-left: 20px;
 }
 .pb0 {
   padding-bottom: 0;
