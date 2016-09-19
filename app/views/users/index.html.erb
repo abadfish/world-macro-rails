@@ -5,6 +5,6 @@
     <p><%= i %>. <%= link_to user.email, user_path(user) %><br />
       <p>Permission level: <%= user.role %></p>
       <%= link_to "Edit", edit_user_registration_path %>
-    <%= link_to "Delete", cancel_user_registration_path %></p>
+    <%= link_to "Delete", "/users/#{user.id}", method: "delete" %></p>
   <% end %>
 </section>
