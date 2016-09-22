@@ -32,7 +32,7 @@
   <div id="navbar" class="light-fade">
     <div class="wrapper">
       <nav class="clearfix">
-        <a href="/">Home</a><a href="/trades">Positions</a><a href="/insights">Insights</a><a href="/about">About</a><a href="/contact">Contact</a><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank">F.O.M.C.</a><a class="menu-icon">&#9776;</a>
+        <a href="/">Home</a><% if user_signed_in? %><%= link_to "Positions", trades_path %><% else %><%= link_to "Positions", new_user_registration_path %><% end %><a href="/insights">Insights</a><a href="/about">About</a><a href="/contact">Contact</a><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank">F.O.M.C.</a><a class="menu-icon">&#9776;</a>
       </nav>
     </div><!-- .wrapper -->
   </div><!-- #navbar -->
