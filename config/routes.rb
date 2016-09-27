@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   resources :positions
   resources :posts
   resources :trades
+  post 'trades/upload', to: 'trades#upload'
   resources :comments
-  resources :tags, only: [:index]
+  resources :tags, only: [:index, :destroy]
 
   root 'posts#index'
 

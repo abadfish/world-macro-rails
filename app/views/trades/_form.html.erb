@@ -2,7 +2,7 @@
   <h2>Trade Entry</h2>
   <%= form_for @trade do |f| %>
     <%= f.label :status %>
-    <%= f.text_field :status %><br />
+    <%= f.select(:status, options_for_select([["open", "open"], ["closed", "closed"]])) %><br />
     <%= f.label :direction %>
     <%= f.text_field :direction %><br />
     <%= f.label :size %>

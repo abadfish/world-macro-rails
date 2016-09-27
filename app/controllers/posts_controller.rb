@@ -6,10 +6,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.sort_by do |post|
-      post[:post_date]
-    end
-    @posts.reverse!
+    @posts = Post.order(post_date: :desc).page(params[:page])
     @news_headines = News.new("bloomberg").get_titles
     @tags = Tag.all
     if !params[:tag].blank?
@@ -20,10 +17,7 @@ class PostsController < ApplicationController
   end
 
   def get_news_source
-    @posts = Post.all.sort_by do |post|
-      post[:post_date]
-    end
-    @posts.reverse!
+    @posts = Post.order(post_date: :desc).page(params[:page])
     @tags = Tag.all
     @news_headines = News.new(params[:news]).get_titles
     @current = params[:news]

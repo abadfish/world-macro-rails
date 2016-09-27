@@ -1,37 +1,62 @@
-<section class="col-7">
+<section class="col-lg-12">
   <h2>All Trades</h2>
-  <h3><%= link_to "Add New trade", new_trade_path %></h3>
-    <!-- - <%= link_to "See all open positions", positions_path %> -->
-    <table>
 
+  <h3><% if user_signed_in? && current_user.admin? %>
+    <%= link_to "Add New trade", new_trade_path %>
+    <% end %></h3>
+
+    <%= form_tag trades_upload_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Import Trades File" %>
+    <% end %>
+
+    <table>
     <tr>
-      <th>Trade ID</th>
+      <th>ID</th>
       <th>Status</th>
+      <th>Type</th>
       <th>Trade Date</th>
       <th>Direction</th>
       <th>SIZE</th>
       <th>Product</th>
       <th>Execution Price</th>
       <th>Current Price</th>
-      <th>Option Strategy</th>
-      <th>Strategy Execution Px</th>
-      <th>Strategy Current Px</th>
-
-      <th>P/L</th>
+      <th>Target</th>
+      <th>Stop</th>
+      <th>Tick Value</th>
+      <th>Risk *</th>
+      <th>Target Profit *</th>
+      <th>Realized *</th>
+      <th>Exit Date</th>
+      <th>Exit Price</th>
+      <th>Currency</th>
+      <th>Rate at Exit</th>
+      <th>Realized P/L in USD</th>
+      <th>Category</th>
     </tr>
     <% @trades.each do |trade| %>
     <tr>
-      <td><%= link_to trade.id, trade_path(trade) %>. </td>
+      <td><%= trade.id %>. </td>
       <td><%= trade.status %> </td>
+      <td><%= trade.product_type %> </td>
       <td><%= trade.trade_date %> </td>
-      <td><%= trade.direction %></td>
+      <td><%= trade.direction %> </td>
       <td><%= trade.size %> </td>
       <td><%= trade.product %> </td>
       <td><%= trade.price %> </td>
       <td><%= trade.current_price %> </td>
-      <td><%= trade.option_strategy %></td>
-      <td><%= trade.strategy_price %></td>
-      <td><%= trade.strategy_current_px %></td>
+      <td><%= trade.target %> </td>
+      <td><%= trade.stop %> </td>
+      <td><%= trade.tick_value %> </td>
+      <td><%= trade.risk %> </td>
+      <td><%= trade.target_profit %> </td>
+      <td><%= trade.realized %></td>
+      <td><%= trade.exit_date %></td>
+      <td><%= trade.exit_price %></td>
+      <td><%= trade.currency %> </td>
+      <td><%= trade.rate_at_close %> </td>
+      <td><%= trade.p_and_l_usd %> </td>
+      <td><%= trade.category %> </td>
 
 
       <td><%=  %></td>

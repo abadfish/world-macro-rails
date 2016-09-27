@@ -29,7 +29,8 @@
           <h5><%= post.summary %><br>
           <%= post.post_date %></h5><br />
         <% end %>
-
+        <%= page_entries_info @posts %>
+        <%= paginate @posts, window: 2 %>
       <% else %>
 
         <% @posts.each do |post| %>

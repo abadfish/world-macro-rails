@@ -1,4 +1,6 @@
 class TradesController < ApplicationController
+  require 'csv'
+
   def show
     @trade = Trade.find(params[:id])
   end
@@ -15,25 +17,33 @@ class TradesController < ApplicationController
   def create
     @trade = Trade.new(trade_params)
     @trade.user_id = current_user.id
-    # if product_in_positions?(@trade.product).nil?
-    #   @position = Position.new
-    #   @position.p_direction = @trade.direction
-    #   @position.aggregate_size = @trade.size
-    #   @position.p_product = @trade.product
-    #   @position.aggregate_price = @trade.price
-    #   @position.p_current_price = @trade.current_price
-    #   @position.user_id = @trade.user_id
-    #   @position.save
-    #   @position.id = @trade.position_id
-    #   @trade.save
-    # else
-    #   @position = Position.find_by(p_product: @trade.product)
-    #   @trade.position_id = @position.id
-    #   @trade.save
-    #   adjust_position(@trade)
-    # end
     @trade.save
-    redirect_to trade_path(@trade)
+    redirect_to trades_path
+  end
+
+  def upload
+    CSV.foreach(params[:file].path, headers: false, encoding:'iso-8859-1:utf-8', :col_sep => ";", :quote_char => "\x00") do |trade|
+      Trade.create(status: trade[0],
+      product_type: trade[1],
+      trade_date: trade[2],
+      direction: trade[3],
+      size: trade[4],
+      product: trade[5],
+      price: trade[6],
+      target: trade[8],
+      stop: trade[9],
+      tick_value: trade[10],
+      risk: trade[11],
+      target_profit: trade[12],
+      realized: trade[13],
+      exit_date: trade[14],
+      exit_price: trade[15],
+      currency: trade[16],
+      rate_at_close: trade[17],
+      p_and_l_usd: trade[18],
+      category: trade[19])
+    end
+    redirect_to trades_path
   end
 
   def edit
@@ -58,16 +68,25 @@ class TradesController < ApplicationController
   def trade_params
     params.require(:trade).permit(
       :status,
+      :product_type,
       :direction,
       :size,
       :product,
       :price,
       :current_price,
-      :option_strategy,
-      :strategy_price,
-      :strategy_current_px,
       :trade_date,
-      :user_id
+      :target,
+      :stop,
+      :tick_value,
+      :risk,
+      :target_profit,
+      :realized,
+      :exit_date,
+      :exit_price,
+      :currency,
+      :rate_at_close,
+      :p_and_l_usd,
+      :category
     )
   end
 
