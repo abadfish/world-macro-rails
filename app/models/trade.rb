@@ -1,9 +1,8 @@
 class Trade < ActiveRecord::Base
   belongs_to :position
-  belongs_to :user
   validates :direction, presence: true
 
-  before_create :update_current_prices
+  # before_create :update_current_prices
 
   def trader
     self.user.username

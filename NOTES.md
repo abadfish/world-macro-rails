@@ -70,3 +70,33 @@ def configure_permitted_parameters
   devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :stripe_card_token, :email, :password) }
   devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :stripe_card_token) }
 end
+
+
+if (window.location.href === window.location.search) {
+  window.location.search = window.location.search + '/news_source?utf8=✓&news=' + $('#news-refresh form #news').val();
+} else {
+
+  <%= form_for @post, html: { multipart: true } do |f| %>
+
+    <%= f.label :tag_name %>
+    <%= f.text_field :tag_name, list: "tags_autocomplete" %>
+      <datalist id="tags_autocomplete">
+      <%= Tag.all.each do |tag| %>
+        <option value="<%= tag.name %>">
+      <% end %>
+      </datalist><br />
+    <%= f.label :title %><br />
+    <%= f.text_field :title %><br />
+    <%= f.label :summary %><br />
+    <%= f.text_area :summary %><br />
+    <%= f.label :content %><br />
+    <%= f.text_area :content %><br />
+    <%= f.label :content_2 %><br />
+    <%= f.text_area :content_2 %><br />
+    <%= f.label :post_date %><br />
+    <%= f.text_field :post_date %><br />
+
+    <%= f.label "Attach Chart: " %><br />
+    <%= f.file_field :image %>
+    <%= f.submit %><br />
+  <% end %>

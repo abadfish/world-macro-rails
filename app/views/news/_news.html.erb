@@ -1,8 +1,10 @@
-<%= form_tag '/news_source', method: 'get' do  %>
-  <%= select_tag "news" , options_for_select([["Bloomberg", "bloomberg"], ["Reuters", "reuters"], ["CNN", "cnn"], ["BBC News", "bbcnews"], ["WSJ", "thewallstreetjournal"]], (@current ||"bloomberg")) %>
-  <%= submit_tag "Submit" %>
-<% end %>
+<div id="news-refresh" class="mt16">
+  <%= form_tag '/news_source', method: 'get' do  %>
+    <%= select_tag "news" , options_for_select([["Bloomberg", "bloomberg"], ["Reuters", "reuters"], ["CNN", "cnn"], ["BBC News", "bbcnews"], ["WSJ", "thewallstreetjournal"]], (@current ||"bloomberg")) %>
+  <% end %>
+
 
 <% @news_headines.each do |k, v| %>
   <h5><a id="news" href="<%= v %>" target="_blank"><%= "#{k}" %></a></h5> --- <br />
 <% end %>
+</div>

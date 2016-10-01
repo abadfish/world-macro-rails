@@ -183,8 +183,8 @@ img.grayscale {
 }
 
 video, audio, iframe, table, form {
-  width: 90%; /* IE */
-  max-width: 90%; /* FF, Safari, Chrome */
+  width: 100%; /* IE */
+  max-width: 100%; /* FF, Safari, Chrome */
 }
 
 .thumbnail {

@@ -149,11 +149,6 @@ img.grayscale {
   -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
 }
 
-video, audio, iframe, table, form {
-  width: 90%; /* IE */
-  max-width: 90%; /* FF, Safari, Chrome */
-}
-
 .thumbnail {
   float: left;
   margin-right: 15px;

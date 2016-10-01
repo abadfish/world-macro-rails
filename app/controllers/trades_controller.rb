@@ -6,7 +6,7 @@ class TradesController < ApplicationController
   end
 
   def index
-    Trade.update_current_prices
+    # Trade.update_current_prices
     @trades = Trade.all
   end
 
@@ -22,7 +22,7 @@ class TradesController < ApplicationController
   end
 
   def upload
-    CSV.foreach(params[:file].path, headers: false, encoding:'iso-8859-1:utf-8', :col_sep => ";", :quote_char => "\x00") do |trade|
+    CSV.foreach(params[:file].path, headers: false, encoding:'iso-8859-1:utf-8') do |trade|
       Trade.create(status: trade[0],
       product_type: trade[1],
       trade_date: trade[2],
