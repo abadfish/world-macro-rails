@@ -100,3 +100,13 @@ if (window.location.href === window.location.search) {
     <%= f.file_field :image %>
     <%= f.submit %><br />
   <% end %>
+
+
+
+  <div class="row mb48 mb-xs-0">
+    <div class="col-sm-4 text-center">
+        <div class="modal-container">
+            <a class="btn btn-lg btn-modal" href="#">
+                <i class="ti-text"></i> Basic Text</a>
+                <div id="myModal" class="modal fade" role="dialog">
+                  <div class="modal-dialog">

@@ -1,28 +1,47 @@
-<section>
-  <div class="container">
-      <div class="row">
-          <div class="col-sm-12 text-center">
-              <h4 class="uppercase mb16">Flexible, Multipurpose Modals</h4>
-              <p class="lead mb64">
-                  Using extremely simple markup, you can combine Foundry's smart colour classes to create an array of engaging modals.
-              </p>
-          </div>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">New Post</button>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+<!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
       </div>
 
+      <div class="modal-body">
+        <%= form_for @post, html: { multipart: true } do |f| %>
 
-<div class="row mb48 mb-xs-0">
-  <div class="col-sm-4 text-center">
-      <div class="modal-container">
-          <a class="btn btn-lg btn-modal" href="#">
-              <i class="ti-text"></i> Basic Text</a>
-          <div class="foundry_modal">
-              <h4>Hey there, I'm a cool multi-purpose modal.
-                  <br /> Use me for almost anything!</h4>
-                  
-          </div>
+          <%= f.label :tag_name %>
+          <%= f.text_field :tag_name, list: "tags_autocomplete" %>
+            <datalist id="tags_autocomplete">
+            <%= Tag.all.each do |tag| %>
+              <option value="<%= tag.name %>">
+            <% end %>
+            </datalist><br />
+          <%= f.label :title %><br />
+          <%= f.text_field :title %><br />
+          <%= f.label :summary %><br />
+          <%= f.text_area :summary %><br />
+          <%= f.label :content %><br />
+          <%= f.text_area :content %><br />
+          <%= f.label :content_2 %><br />
+          <%= f.text_area :content_2 %><br />
+          <%= f.label :post_date %><br />
+          <%= f.text_field :post_date %><br />
+
+          <%= f.label "Attach Chart: " %><br />
+          <%= f.file_field :image %>
+          <%= f.submit %><br />
+        <% end %>
+
       </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>
-</div>
-</section>
-<script src="js/scripts.js"></script>
