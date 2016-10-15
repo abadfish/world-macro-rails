@@ -110,3 +110,29 @@ if (window.location.href === window.location.search) {
                 <i class="ti-text"></i> Basic Text</a>
                 <div id="myModal" class="modal fade" role="dialog">
                   <div class="modal-dialog">
+
+
+Chris Jones
+App-developer
+
+
+Less on each line for posts
+
+Different levels of access
+
+
+1. Access to website $300
+  -targeting institutional clients
+
+2. Emails to personal email when trade ideas are released $500
+
+3. 3rd tier can contact directly to get a trade idea or analysis $800/mo
+
+-World Macro email accounts
+
+-link to disclaimer and terms of service
+
+-track record pages instead of insights
+
+-take out some columns in positions charts
+-show page for each individual trade
