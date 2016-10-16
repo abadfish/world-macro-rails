@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926221956) do
+ActiveRecord::Schema.define(version: 20161016202623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,14 +65,9 @@ ActiveRecord::Schema.define(version: 20160926221956) do
     t.text     "content"
     t.string   "summary"
     t.date     "post_date"
-    t.string   "image"
     t.integer  "user_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "tag_id"
     t.text     "content_2"
   end
@@ -111,6 +106,16 @@ ActiveRecord::Schema.define(version: 20160926221956) do
     t.decimal  "rate_at_close"
     t.decimal  "p_and_l_usd"
     t.string   "category"
+  end
+
+  create_table "uploads", force: :cascade do |t|
+    t.string   "uploaded_file_file_name"
+    t.string   "uploaded_file_content_type"
+    t.integer  "uploaded_file_file_size"
+    t.datetime "uploaded_file_updated_at"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "post_id"
   end
 
   create_table "users", force: :cascade do |t|

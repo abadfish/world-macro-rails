@@ -32,6 +32,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @post.comments.build()
+    @post.uploads.build()
   end
 
   def create
@@ -72,6 +73,6 @@ class PostsController < ApplicationController
   private
 
   def post_params(*args)
-    params.require(:post).permit(:title, :content, :content_2, :summary, :post_date, :image, :image_file_name, :tag_name, :comments => [])
+    params.require(:post).permit(:title, :content, :content_2, :summary, :post_date, :tag_name, :uploads => [], :comments => [])
   end
 end

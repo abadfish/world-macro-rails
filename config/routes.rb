@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :uploads
   devise_for :views
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => 'users/registrations' }
   resources :tweets
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
+  post 'uploads', to: 'uploads#create'
   post 'comments', to: 'comments#create'
 
   get 'about', to: 'static#about'

@@ -129,6 +129,9 @@ Different levels of access
 3. 3rd tier can contact directly to get a trade idea or analysis $800/mo
 
 -World Macro email accounts
+-WM bank account
+-WM Business Cards
+
 
 -link to disclaimer and terms of service
 
@@ -136,3 +139,8 @@ Different levels of access
 
 -take out some columns in positions charts
 -show page for each individual trade
+
+-mailer for vip and exclusive users
+
+-sign up with different levels of access. charge users different amounts
+  -make more plans in swipe

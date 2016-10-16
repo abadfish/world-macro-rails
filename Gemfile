@@ -19,6 +19,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'carrierwave'
 gem 'paperclip', '>= 5.0.0'
+gem 'jquery-fileupload-rails'
 gem 'aws-sdk', '~> 2.3'
 gem 'devise'
 gem 'pundit'

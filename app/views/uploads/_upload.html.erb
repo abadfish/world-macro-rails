@@ -1,0 +1,3 @@
+<% @post.uploads.each do |upload| %>
+<%= image_tag(upload.uploaded_file(:small), class: 'thumb')  %>
+<% end %>

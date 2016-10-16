@@ -9,23 +9,34 @@
       <p><%= @post.content_2 %></p>
     <% end %>
 
-    <p><a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a></p>
-    <%= link_to image_tag(@post.image.url(:med)), @post.image.url %>
+    <p><a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a></p>  <br />
+
+    <% @post.uploads.each do |upload| %>
+    <%= link_to image_tag(upload.uploaded_file(:large))  %>
+    <% end %>
     <br />
-    <% if user_signed_in? && current_user.admin? || current_user.vip? %>
-      <p><%= link_to "Edit", edit_post_path(@post) %>
-      <%= link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } %> Tag: <%= @post.tag_name %></p>
-    <% end %>
 
+    <div class="col-md-5">
+      <% if user_signed_in? && current_user.admin? || current_user.vip? %>
+      <br />
+      <%= render partial: 'uploads/form', local: {post: @post, upload: @upload} %>
 
+        <p><%= link_to "Edit", edit_post_path(@post) %>
+        <%= link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } %> Tag: <%= @post.tag_name %></p>
+      <% end %>
+    </div><br />
 
-    <%= render partial:'comments/form', local: {post: @post, comment: @comment} %>
+    <div class="col-md-8">
+      <%= render partial:'comments/form', local: {post: @post, comment: @comment} %><br />
 
-    <h4>Comments:</h4>
-    <% @post.comments.each do |comment| %>
-      <p><%= comment.content %></p>
-    <% end %>
+      <h4>Comments:</h4>
+      <% @post.comments.each do |comment| %>
+        <p><%= comment.content %></p>
+      <% end %>
+    </div>
+
   </div>
+
   <div class="col-1">
     <br />
       <% @posts.each do |post| %>

@@ -1,0 +1,9 @@
+<% if @upload.new_record? %>
+  alert('Failed');
+<% else %>
+  <script type="text/javascript" charset="utf-8">
+  if ($('h1') !== undefined) {
+    $('h1').append("<%=j render partial: 'uploads/upload', locals: { upload: @upload } %>");
+  }
+  </script>
+<% end %>
