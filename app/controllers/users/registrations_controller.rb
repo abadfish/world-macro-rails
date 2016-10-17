@@ -18,8 +18,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     charge = Stripe::Charge.create(
        :customer    => customer.id,
-       :amount      => 500,
-       :description => 'World Macro monthly subscription',
+       :amount      => 30000,
+       :description => 'Standard Subscription',
        :currency    => 'usd'
      )
     #binding.pry
