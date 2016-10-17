@@ -1,13 +1,12 @@
-
-
-
-  <% posts.each do |post| %>
+<% posts.each do |post| %>
   <div class="col-md-12">
 
 
     <div class="thumbnail mt8">
-      <% post.uploads.each do |upload| %>
-        <%= image_tag(upload.uploaded_file(:small)) %>
+      <% post.uploads.each_with_index do |upload, i| %>
+        <% if i == 0 %>
+          <%= image_tag(upload.uploaded_file(:med)) %>
+        <% end %>
       <% end %>
 
     </div>
@@ -15,5 +14,5 @@
 
     <h5><%= post.summary %><br>
     <%= post.post_date %></h5><br />
-    </div>
-  <% end %>
+  </div>
+<% end %>
