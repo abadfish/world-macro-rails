@@ -9,7 +9,7 @@
     <div class="post-spacer">
       <div id="posts">
         <% if user_signed_in? && current_user.admin? %>
-          <%= link_to "ADD NEW POST", new_post_path %>
+          <%= render partial: 'form', locals: {post: @post} %>
         <% end %>
 
         <%= form_tag("/posts", method: "get") do %>
@@ -20,29 +20,27 @@
       <% if user_signed_in? %>
 
         <% @posts.each do |post| %>
+        <div class="col-md-12">
+
+          <div class="thumbnail mt8">
+            <% post.uploads.each do |upload| %>
+              <%= image_tag(upload.uploaded_file(:small)) %>
+            <% end %>
+          </div>
+
           <h4 id="posts"><%= link_to post.title, post_path(post) %></h4>
 
-          <div class="thumbnail">
-            <!--  -->
-          </div>
-
           <h5><%= post.summary %><br>
           <%= post.post_date %></h5><br />
+        </div>
         <% end %>
+
         <%= page_entries_info @posts %>
         <%= paginate @posts, window: 2 %>
+
       <% else %>
 
-        <% @posts.each do |post| %>
-          <h4 id="posts"><%= link_to post.title, new_user_registration_path %></h4>
-
-          <div class="thumbnail">
-            <!--  -->
-          </div>
-
-          <h5><%= post.summary %><br>
-          <%= post.post_date %></h5><br />
-        <% end %>
+        <%= render partial: 'posts/post', locals: {posts: @posts} %>
 
       <% end %>
     </div>

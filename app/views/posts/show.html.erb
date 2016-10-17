@@ -12,7 +12,7 @@
     <p><a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a></p>  <br />
 
     <% @post.uploads.each do |upload| %>
-    <%= link_to image_tag(upload.uploaded_file(:large))  %>
+    <%= image_tag(upload.uploaded_file(:original))  %>
     <% end %>
     <br />
 

@@ -1,0 +1,19 @@
+
+
+
+  <% posts.each do |post| %>
+  <div class="col-md-12">
+
+
+    <div class="thumbnail mt8">
+      <% post.uploads.each do |upload| %>
+        <%= image_tag(upload.uploaded_file(:small)) %>
+      <% end %>
+
+    </div>
+    <h4 id="posts"><%= link_to post.title, new_user_registration_path %></h4>
+
+    <h5><%= post.summary %><br>
+    <%= post.post_date %></h5><br />
+    </div>
+  <% end %>

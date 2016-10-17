@@ -11,7 +11,7 @@
       </div>
 
       <div class="modal-body">
-        <%= form_for @post, html: { multipart: true } do |f| %>
+        <%= form_for Post.new, html: { multipart: true } do |f| %>
 
           <%= f.label :tag_name %>
           <%= f.text_field :tag_name, list: "tags_autocomplete" %>
@@ -30,8 +30,6 @@
           <%= f.text_area :content_2 %><br />
           <%= f.label :post_date %><br />
           <%= f.text_field :post_date %><br />
-
-
           <%= f.submit %><br />
         <% end %>
 
