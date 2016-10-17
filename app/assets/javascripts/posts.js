@@ -8,7 +8,6 @@ newsRefresh = function() {
   });
 };
 
-
 $(document).ready(function() {
   newsRefresh();
 });
