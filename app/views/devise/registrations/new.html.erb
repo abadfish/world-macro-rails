@@ -1,10 +1,10 @@
 <div class="col-md-12">
   <div class="col-md-4">
-    <div class="pricing-table pt-2 text-center">
-      <h5 class="uppercase">Exclusive</h5>
+    <div class="pricing-table pt-2 text-center feature bordered">
+      <h5 class="uppercase">Pro</h5>
         <span class="price">$800</span>
         <p class="lead">Per Month</p>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Exclusive Access</button>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Get Pro Access</button>
         <ul>
           <li><strong>Unlimited</strong> access to trade ideas</li>
           <li><strong>Unlimited</strong> access to Darren's portfolio</li>
@@ -19,7 +19,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Exclusive Access</h4>
+                <h4 class="modal-title">Pro Access</h4>
               </div>
 
               <div class="modal-body">
@@ -50,7 +50,7 @@
                     <% else %>
                     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                             data-description="Exclusive Subscription"
+                             data-description="Pro Subscription"
                              data-amount="80000"
                              data-locale="auto"></script>
 
@@ -68,14 +68,14 @@
           </div>
         </div>
     </div>
-  </div><!-- End of Exclusive Subscription form-->
+  </div><!-- End of Pro Subscription form-->
 
   <div class="col-md-4">
-    <div class="pricing-table pt-2 text-center">
-      <h5 class="uppercase">VIP</h5>
+    <div class="pricing-table pt-2 text-center feature bordered">
+      <h5 class="uppercase">Trader</h5>
         <span class="price">$500</span>
         <p class="lead">Per Month</p>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">VIP Access</button>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Get Trader Access</button>
         <ul>
           <li><strong>Unlimited</strong> access to trade ideas</li>
           <li><strong>Unlimited</strong> access to Darren's portfolio</li>
@@ -91,7 +91,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">VIP Access</h4>
+              <h4 class="modal-title">Trader Access</h4>
             </div>
 
             <div class="modal-body">
@@ -123,7 +123,7 @@
                   <% else %>
                   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                           data-description="VIP Subscription"
+                           data-description="Trader Subscription"
                            data-amount="50000"
                            data-locale="auto"></script>
 
@@ -141,14 +141,14 @@
         </div>
       </div>
     </div>
-  </div> <!-- End of VIP subscription -->
+  </div> <!-- End of Trader subscription -->
 
   <div class="col-md-4">
-    <div class="pricing-table pt-2 text-center">
+    <div class="pricing-table pt-2 text-center feature bordered">
       <h5 class="uppercase">Standard</h5>
       <span class="price">$300</span>
       <p class="lead">Per Month</p>
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Standard Access</button>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Get Standard Access</button>
       <ul>
         <li><strong>Unlimited</strong> access to trade ideas</li>
         <li><strong>Unlimited</strong> access to Darren's portfolio</li>
