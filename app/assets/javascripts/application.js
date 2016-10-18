@@ -16,6 +16,6 @@
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
 //= require turbolinks
-//= require bootstrap-sprockets
+//= require bootstrap.min
 //= require posts
 //= require parallax
