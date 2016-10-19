@@ -1611,8 +1611,8 @@ pre code {
   margin-left: auto;
 }
 .row {
-  margin-right: -30px;
-  margin-left: -30px;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
@@ -6857,7 +6857,7 @@ figcaption {
 }
 
 table {
-  margin: 0 0 20px;
+  margin: 0 0 10px !important;
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
 }
@@ -6866,10 +6866,20 @@ tr:nth-child(even) {
   background: #efefef;
 }
 
+
+th {
+  background: #555;
+  color: white;
+}
+
 th, td {
-  padding: 10px;
+  padding: 1px !important;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
+}
+
+a {
+  color: black;
 }
 
 #no-border {
@@ -6877,12 +6887,7 @@ th, td {
   border:none;
 }
 
-th {
-  background: #555;
-  color: white;
-}
-
-input, textarea {
+input, textarea, select {
   display: block;
   width: 100%;
   padding: 5px;
@@ -6961,17 +6966,17 @@ iframe {
 }
 
 .dark-fade {
-background: rgb(0,0,0);
-/* Old browsers */
-background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(71,71,71,1) 28%, rgba(81,81,81,1) 35%, rgba(71,71,71,1) 72%, rgba(43,43,43,1) 87%, rgba(28,28,28,1) 91%, rgba(0,0,0,1) 100%);
-/* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(28%,rgba(71,71,71,1)), color-stop(35%,rgba(81,81,81,1)), color-stop(72%,rgba(71,71,71,1)), color-stop(87%,rgba(43,43,43,1)), color-stop(91%,rgba(28,28,28,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(71,71,71,1) 28%,rgba(81,81,81,1) 35%,rgba(71,71,71,1) 72%,rgba(43,43,43,1) 87%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(71,71,71,1) 28%,rgba(81,81,81,1) 35%,rgba(71,71,71,1) 72%,rgba(43,43,43,1) 87%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%);
-/* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(71,71,71,1) 28%,rgba(81,81,81,1) 35%,rgba(71,71,71,1) 72%,rgba(43,43,43,1) 87%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%);
-/* IE10+ */
-background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(71,71,71,1) 28%,rgba(81,81,81,1) 35%,rgba(71,71,71,1) 72%,rgba(43,43,43,1) 87%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%); /* W3C */
+  background: rgb(0,0,0);
+  /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(71,71,71,1) 28%, rgba(81,81,81,1) 35%, rgba(71,71,71,1) 72%, rgba(43,43,43,1) 87%, rgba(28,28,28,1) 91%, rgba(0,0,0,1) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(28%,rgba(71,71,71,1)), color-stop(35%,rgba(81,81,81,1)), color-stop(72%,rgba(71,71,71,1)), color-stop(87%,rgba(43,43,43,1)), color-stop(91%,rgba(28,28,28,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(71,71,71,1) 28%,rgba(81,81,81,1) 35%,rgba(71,71,71,1) 72%,rgba(43,43,43,1) 87%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(71,71,71,1) 28%,rgba(81,81,81,1) 35%,rgba(71,71,71,1) 72%,rgba(43,43,43,1) 87%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(71,71,71,1) 28%,rgba(81,81,81,1) 35%,rgba(71,71,71,1) 72%,rgba(43,43,43,1) 87%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(71,71,71,1) 28%,rgba(81,81,81,1) 35%,rgba(71,71,71,1) 72%,rgba(43,43,43,1) 87%,rgba(28,28,28,1) 91%,rgba(0,0,0,1) 100%); /* W3C */
 
 }
 
@@ -6989,8 +6994,8 @@ img.grayscale {
 }
 
 video, audio, iframe, table, form {
-  width: 90%; /* IE */
-  max-width: 90%; /* FF, Safari, Chrome */
+  width: 100%; /* IE */
+  max-width: 100%; /* FF, Safari, Chrome */
 }
 
 .thumbnail {
@@ -7037,10 +7042,10 @@ video, audio, iframe, table, form {
 
 .col-2 {
   float: left;
-  width: 48%;
+  width: 56%;
   margin-left: 20%;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 0px;
 }
 
 .col-4 {
@@ -7087,15 +7092,12 @@ video, audio, iframe, table, form {
 }
 
 [class*="col-"] {
-  margin-left: 2%;
+  margin-left: 0%;
 }
 
 .first {
   margin-left: 0%;
 }
-
-/*/////// SOCIAL ////////*/
-
 
 
 /*////////// HEADER //////////*/
@@ -7325,531 +7327,9 @@ footer {
   padding: 10px;
   background: #ffffff;
   border-top: 1px white;
-  height: 40px;
+  height: 40px !important;
   width: 100%;
   position:absolute;
-}
-@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
-@import url(https://fonts.googleapis.com/css?family=Bungee+Hairline|Slabo+27px);
-@import url(https://fonts.googleapis.com/css?family=Audiowide);
-/*////////// GLOBAL //////////*/
-/* line 9, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-body {
-  font-size: 90%;
-  margin: 0;
-  padding-bottom: 5px;
-  height: 100%;
-}
-
-/* line 16, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-h3 {
-  margin: 0 0 10px;
-}
-
-/* line 20, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-ul, ol {
-  margin-bottom: 10px;
-}
-
-/* line 24, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-li {
-  margin-left: 20px;
-}
-
-/* line 28, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-p, address {
-  font-size: 1em;
-  /* 16px, ?pt, 100%, 1em */
-  line-height: 1.5em;
-}
-
-/* line 33, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-figure {
-  margin: 0 0 10px;
-}
-
-/* line 37, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-figcaption {
-  font: normal 0.75em/1.5em serif, cursive;
-  color: #777;
-  text-align: left;
-}
-
-/* line 43, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-table {
-  margin: 0 0 20px;
-  border-top: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-}
-
-/* line 49, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-tr:nth-child(even) {
-  background: #efefef;
-}
-
-/* line 53, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-th, td {
-  padding: 10px;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-}
-
-/* line 59, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-th {
-  background: #555;
-  color: white;
-}
-
-/* line 64, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-input, textarea {
-  display: block;
-  width: auto;
-  padding: 5px;
-  margin-bottom: 5px;
-  box-shadow: 0 3px 5px #ccc;
-  border: 1px solid #ccc;
-}
-
-/* line 73, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-input[type="submit"] {
-  margin-top: 3px;
-  margin-bottom: 2px;
-  width: 75px;
-  height: 25px;
-  background: rgba(0, 0, 0, 0.25);
-  color: white;
-  border-radius: 25px;
-  border: 1px solid;
-}
-
-/* line 84, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-input[type="submit"]:hover {
-  background: black;
-}
-
-/* line 88, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-iframe {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  height: 403px;
-}
-
-/* line 96, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.milk-text {
-  font: bold 2.6em serif, cursive;
-  color: white;
-  text-shadow: 0 2px 3px #000;
-}
-
-/* line 102, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.shadow {
-  box-shadow: 0 3px 10px #333;
-}
-
-/* line 106, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.border-right {
-  border-right: 1px dotted #ccc;
-  padding-right: 30px;
-}
-
-/*////////// BACKGROUNDS //////////*/
-/* line 114, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.fintimes {
-  background: #f0f0f0 no-repeat center top;
-  background-size: cover 100%;
-}
-
-/* line 119, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#container {
-  min-height: 100%;
-  position: relative;
-}
-
-/* line 124, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.light-fade {
-  background: #efefef;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #efefef 0%, #ffffff 24%, #ffffff 68%, #dddddd 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #efefef), color-stop(24%, #ffffff), color-stop(68%, #ffffff), color-stop(100%, #dddddd));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #efefef 0%, #ffffff 24%, #ffffff 68%, #dddddd 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #efefef 0%, #ffffff 24%, #ffffff 68%, #dddddd 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #efefef 0%, #ffffff 24%, #ffffff 68%, #dddddd 100%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, #efefef 0%, #ffffff 24%, #ffffff 68%, #dddddd 100%);
-  /* W3C */
-}
-
-/* line 134, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.medium-fade {
-  background: #e5e5e5;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, #e5e5e5 0%, white 99%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(99%, white));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #e5e5e5 0%, white 99%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #e5e5e5 0%, white 99%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #e5e5e5 0%, white 99%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, #e5e5e5 0%, white 99%);
-  /* W3C */
-}
-
-/*/////// MEDIA ////////*/
-/* line 146, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-img.grayscale:hover {
-  filter: none;
-  -webkit-filter: grayscale(0%);
-}
-
-/* line 151, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-img.grayscale {
-  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
-  /* Firefox 3.5+ */
-  filter: gray;
-  /* IE6-9 */
-  -webkit-filter: grayscale(100%);
-  /* Chrome 19+ & Safari 6+ */
-}
-
-/* line 157, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-video, audio, iframe, table, form {
-  width: 90%;
-  /* IE */
-  max-width: 90%;
-  /* FF, Safari, Chrome */
-}
-
-/* line 162, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.thumbnail {
-  float: left;
-  margin-right: 15px;
-}
-
-/*////////// FIXES //////////*/
-/* line 169, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* line 175, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  height: 0;
-  line-height: 0;
-}
-
-/* line 184, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.clear {
-  clear: both;
-}
-
-/*/////// LAYOUT ////////*/
-/* line 190, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.wrapper {
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* line 195, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.col-1 {
-  float: right;
-  width: 22%;
-}
-
-/* line 200, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.col-2 {
-  float: left;
-  width: 53%;
-  margin-left: 20%;
-  padding-left: 30px;
-  padding-right: 0px;
-}
-
-/* line 208, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.col-4 {
-  float: left;
-  width: 19%;
-}
-
-/* line 213, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.col-3 p {
-  -moz-column-rule: 1px dotted #ccc;
-  -webkit-column-rule: 1px dotted #ccc;
-  column-rule: 1px dotted #ccc;
-  -moz-column-gap: 1.5em;
-  -webkit-column-gap: 1.5em;
-  column-gap: 1.5em;
-  -moz-column-count: 3;
-  -webkit-column-count: 3;
-  column-count: 3;
-}
-
-/* line 225, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-[class*="col-"] {
-  margin-left: 0%;
-}
-
-/* line 229, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-.first {
-  margin-left: 0%;
-}
-
-/*/////// SOCIAL ////////*/
-/*////////// HEADER //////////*/
-/* line 239, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-header {
-  margin: 0 0 30px;
-}
-
-/*////////// NAVBAR //////////*/
-/* line 245, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 2;
-  text-align: center;
-}
-
-/* line 254, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#navbar nav {
-  border-left: 1px solid #d3d3d3;
-}
-
-/* line 258, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#navbar nav a.selected {
-  color: red;
-}
-
-/* line 262, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#navbar nav a {
-  display: inline-block;
-  width: 16.6666667%;
-  margin: 0;
-  padding: 10px 0;
-  text-transform: uppercase;
-  text-align: center;
-  text-decoration: none;
-  font: .9em "Trebuchet MS", Arial, sans-serif;
-  color: black;
-}
-
-/* line 274, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#navbar nav a:hover {
-  transition: all .4s ease-in-out;
-  transform: scale(1.1);
-}
-
-/* line 279, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#navbar nav a.menu-icon {
-  display: none;
-}
-
-/*////////// LOGO //////////*/
-/* line 285, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#logo {
-  padding: 35px 0 0;
-  background: black;
-  width: 100%;
-}
-
-/* line 291, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#logo h1 {
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  margin: 0;
-  margin-left: 30px;
-  background: url(wmlogosymbol.png) no-repeat;
-  background-size: 100% 100%;
-}
-
-/* line 304, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#logo h2 {
-  display: inline-block;
-  font: normal 2em "Audiowide", "Trebuchet MS";
-  margin: 0;
-  position: relative;
-  top: -9px;
-  left: 5px;
-  color: #ffffff;
-}
-
-/*////////// MAIN SECTIONS //////////*/
-/* line 316, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-section {
-  padding: 0px;
-  margin-bottom: 20px;
-  border: 10px;
-  border-color: #d3d3d3;
-}
-
-/*////////// DETAILS //////////*/
-/* line 325, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-a {
-  color: black;
-}
-
-/* line 329, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#details {
-  border-top: 1px solid white;
-}
-
-/* line 333, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#details div {
-  height: 221px;
-}
-
-/* line 337, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#details a:link, #details a:visited {
-  color: black;
-  text-decoration: none;
-}
-
-/* line 342, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#details a:hover {
-  color: black;
-  text-decoration: none;
-}
-
-/* line 347, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-#details a:active {
-  color: red;
-}
-
-/*////////// FOOTER //////////*/
-/* line 353, /Users/Fish/Development/Projects/world-macro-rails/app/assets/stylesheets/posts.scss */
-footer {
-  text-align: center;
-  font-size: 0.75em;
-  padding: 10px;
-  background: #ffffff;
-  border-top: 1px white;
-  height: 40px;
-  width: 100%;
-  position: absolute;
-}
-@media only screen and (max-width:1106px) {
-
-  .wrapper {
-    width: 90%;
-  }
-
-  #social {
-    position: absolute;
-    top: 5px;
-    right: 4%;
-    width: auto;
-  }
-
-  #social a {
-    display: inline-block;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-
-  body {
-    font-size: 85%;
-  }
-  #logo h1 {
-    width: 35px;
-    height: 35px;
-  }
-
-  #logo h2 {
-    font-size: 2.2em
-  }
-
-  #social {
-    top: 5px;
-  }
-
-  .col-3 p {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-
-  #navbar nav a {
-    font-size: 0.9em;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-
-  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6 {
-    width: 100%;
-    margin-left: 0;
-    float: none;
-  }
-
-  .border-right {
-    border: 0;
-  }
-
-  #details div {
-    height: auto;
-    padding-bottom: 20px;
-  }
-
-  .col-3 p {
-    -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-
-  #navbar nav a {
-    display: none;
-  }
-
-  #navbar nav a.menu-icon {
-    display: block;
-    float: right;
-    font-size: 1.5em;
-    padding: 10px 20px;
-    width: auto;
-  }
-
-  #logo {
-
-    padding: 60px 0 0;
-  }
-
-  #social {
-    top: 60px;
-  }
-}
-
-@media only screen and (max-width: 490px) {
-  #logo h2 {
-    visibility: hidden;
-  }
-
 }
 /*!
 // Contents
@@ -8178,14 +7658,14 @@ h3 {
   line-height: 40px;
 }
 
-h4 {
+/*h4 {
   font-size: 24px;
   line-height: 32px;
-}
+}*/
 h5 {
   font-size: 14px;
-  line-height: 24px;
-  font-weight: 500;
+  line-height: 24px !important;
+  font-weight: 500 !important;
 }
 h6,
 .h6 {
@@ -8215,7 +7695,7 @@ h6,
   }
   h5 {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 24px !important;
     font-weight: 400;
   }
   h6,
@@ -8489,8 +7969,6 @@ footer.bg-dark li,
   margin-top: -20px;
   top: 0;
   left: 0;
-  background: url(<%= asset_path 'blue-city-chart.png' %>);
-  background-size: cover;
   opacity: 0.8;
   z-index: 2;
 }
@@ -9580,7 +9058,8 @@ input[type="password"] {
 }
 input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+select {
   background: #f5f5f5;
   border: none;
   width: 100%;
@@ -11588,7 +11067,8 @@ img {
 }
 th,
 td {
-  line-height: 24px !important;
+  line-height: 16px !important;
+  word-wrap: break-word;
 }
 .ratings {
   margin-bottom: 24px;
@@ -13007,6 +12487,11 @@ footer.bg-dark a {
 .mt160 {
   margin-top: 160px;
 }
+
+.pl40{
+  margin-left: 40px;
+}
+
 .p32 {
   padding: 0 32px;
 }
@@ -13588,5 +13073,11 @@ footer.bg-dark a {
  *
 
 
+
+
+
  */
 
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
