@@ -10,7 +10,7 @@
 /*Inherited from html.js.flexbox.canvas.canvastext.webgl.no-touch.geolocation.postmessage.websqldatabase.indexeddb.hashchange.history.draganddrop.websockets.rgba.hsla.multiplebgs.backgroundsize.borderimage.borderradius.boxshadow.textshadow.opacity.cssanimations.csscolumns.cssgradients.cssreflections.csstransforms.csstransforms3d.csstransitions.fontface.generatedcontent.video.audio.localstorage.sessionstorage.webworkers.applicationcache.svg.inlinesvg.smil.svgclippaths*/
 
 body {
-  font-size: 90%;
+  font-size: 90% !important;
   margin:0;
   padding-bottom: 40px;
   height:100%;
@@ -86,7 +86,16 @@ a {
   border:none;
 }
 
-input, textarea, select {
+input[type="email"] {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0 3px 5px #ccc;
+  border: 1px solid #ccc;
+}
+
+input[type="password"] {
   display: block;
   width: 100%;
   padding: 5px;
