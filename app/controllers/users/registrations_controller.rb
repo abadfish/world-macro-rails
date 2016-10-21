@@ -13,7 +13,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     user = resource
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
-      :source  => params[:stripeToken]
+      :source  => params[:stripeToken],
+      :plan => params[:stripePlan]
     )
 
     charge = Stripe::Charge.create(
@@ -23,7 +24,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
        :currency    => 'usd'
      )
     #binding.pry
-    # user.stripe_customer_id = customer.id
+    current_user.subscribed = true
+    # current_user.stripeid = customer.id
+    current_user.stripe_card_token = customer.id
+    current_user.plan_id = plan_id
+    current_user.save
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

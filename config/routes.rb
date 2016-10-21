@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'subscribe/new'
+
   resources :uploads
   devise_for :views
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => 'users/registrations' }
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
 
   get 'about', to: 'static#about'
   get 'contact', to: 'static#contact'
+  get 'performance', to: 'static#performance'
   get 'news_source', to: 'posts#get_news_source'
 
   resources :users, only: [:index, :edit,:show, :update, :destroy] do
@@ -24,6 +27,7 @@ Rails.application.routes.draw do
   end
 
   resources :insights
+  resources :subscriptions
   resources :charges
 
 end

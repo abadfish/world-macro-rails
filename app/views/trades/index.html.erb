@@ -14,14 +14,16 @@
   </div>
 
 
-    <table><tr><th>ID</th><th>Status</th><th>Type</th><th>Trade Date</th><th>Direction</th><th>SIZE</th> <th>Product</th> <th>Execution Price</th> <th>Current Price</th> <th>Target</th> <th>Stop</th> <th>Tick Value</th> <th>Risk *</th> <th>Target Profit *</th> <th>Realized *</th> <th>Exit Date</th> <th>Exit Price</th> <th>Currency</th> <th>Rate at Exit</th> <th>Realized P/L in USD</th> <th>Category</th></tr>
+    <table><tr><th>ID</th><th>Status</th><th>Type</th><th>Trade Date</th><th>Direction</th><th>SIZE</th> <th>Product</th> <th>Execution Price</th> <th>Current Price</th> <th>Target</th> <th>Stop</th> <th>Risk *</th> <th>Target Profit *</th> <th>Realized *</th> <th>Exit Date</th> <th>Exit Price</th> <th>Realized P/L in USD</th> <th>Category</th></tr>
     <% @trades.each do |trade| %>
-    <tr>
-      <td><%=trade.id %>.</td><td><%=trade.status %></td><td><%=trade.product_type %></td><td><%=trade.trade_date %></td><td><%=trade.direction %></td><td><%=trade.size %></td><td><%=trade.product %></td><td><%=trade.price %></td><td><%=trade.current_price %></td><td><%=trade.target %></td><td><%=trade.stop %></td><td><%=trade.tick_value %></td><td><%=trade.risk %> </td><td><%=trade.target_profit %></td><td><%=trade.realized %></td><td><%=trade.exit_date %></td><td><%=trade.exit_price %></td><td><%=trade.currency %></td><td><%=trade.rate_at_close %></td><td><%=trade.p_and_l_usd %></td><td><%=trade.category %></td>
+      <% if trade.status == "Open" %>
+      <tr>
+        <td><%=trade.id %>.</td><td><%=trade.status %></td><td><%=trade.product_type %></td><td><%=trade.trade_date %></td><td><%=trade.direction %></td><td><%=trade.size %></td><td><%=trade.product %></td><td><%=trade.price %></td><td><%=trade.current_price %></td><td><%=trade.target %></td><td><%=trade.stop %></td><td><%=trade.risk %> </td><td><%=trade.target_profit %></td><td><%=trade.realized %></td><td><%=trade.exit_date %></td><td><%=trade.exit_price %></td><td><%=trade.p_and_l_usd %></td><td><%=trade.category %></td>
 
       <td id="no-border"><%= link_to " Edit ", edit_trade_path(trade) %></td>
       <td id="no-border"><%= link_to " Delete ", trade, method: :delete, data: { confirm: "Are you sure you want to delete this trade?" } %></td>
     </tr>
+      <% end %>
       <% end %>
   </table>
 </section>
