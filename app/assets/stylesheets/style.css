@@ -251,7 +251,7 @@ video, audio, iframe, table, form {
 .col-2 {
   float: left;
   width: 56%;
-  margin-left: 20%;
+  margin-left: 0%;
   padding-left: 30px;
   padding-right: 0px;
 }
@@ -299,14 +299,9 @@ video, audio, iframe, table, form {
   column-count: 3;
 }
 
-[class*="col-"] {
-  margin-left: 0%;
-}
-
 .first {
   margin-left: 0%;
 }
-
 
 /*////////// HEADER //////////*/
 
