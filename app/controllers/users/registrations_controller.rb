@@ -1,39 +1,44 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-# before_action :configure_sign_up_params, only: [:create]
+
+before_action :configure_sign_up_params, only: [:create]
 # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
 
+    @stripe_list = Stripe::Plan.all
+    @plans = @stripe_list[:data]
+    super
+  end
   # POST /resource
   def create
     super
     user = resource
+    @stripe_list = Stripe::Plan.all
+    @plans = @stripe_list[:data]
+    @plan = @plans.find { |plan| plan.id == user.plan_id}
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
       :source  => params[:stripeToken],
-      :plan => params[:stripePlan]
+      :plan => user.plan_id
     )
 
     charge = Stripe::Charge.create(
        :customer    => customer.id,
-       :amount      => 30000,
+       :amount      => @plan.amount,
        :description => 'Standard Subscription',
        :currency    => 'usd'
      )
-    #binding.pry
-    current_user.subscribed = true
-    # current_user.stripeid = customer.id
-    current_user.stripe_card_token = customer.id
-    current_user.plan_id = plan_id
-    current_user.save
+
+    user.subscribed = true
+    # user.stripeid = customer.id
+    user.stripe_card_token = customer.id
+    user.save
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
-  end
+end
 
   # GET /resource/edit
   # def edit
@@ -62,13 +67,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:plan_id])
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
+    # devise_parameter_sanitizer.permit(:account_update, keys: [:plan_id])
   # end
 
   # The path used after sign up.

@@ -2,7 +2,7 @@
   <div class="col-md-4">
     <div class="pricing-table pt-2 text-center feature bordered">
       <h5 class="uppercase">Pro</h5>
-        <span class="price">$800</span>
+        <span class="price amount">$800</span>
         <p class="lead">Per Month</p>
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Get Pro Access</button>
         <ul>
@@ -30,6 +30,7 @@
                 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                   <%= devise_error_messages! %>
                   <%= f.hidden_field :stripe_card_token %>
+                  <%= f.hidden_field :plan_id, value: @plans[0].id %>
                   <div class="mb0">
                     <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
                   </div>
@@ -51,7 +52,7 @@
                     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                              data-description="Pro Subscription"
-                             data-amount=<%= (@plans[0]["amount"]) %>
+                             data-amount=<%= (  @plans[0]["amount"]) %>
                              data-locale="auto"></script>
 
                     <% end %>
@@ -73,9 +74,9 @@
   <div class="col-md-4">
     <div class="pricing-table pt-2 text-center feature bordered">
       <h5 class="uppercase">Trader</h5>
-        <span class="price">$500</span>
+        <span class="price amount">$500</span>
         <p class="lead">Per Month</p>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Get Trader Access</button>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#traderModal">Get Trader Access</button>
         <ul>
           <li><strong>Unlimited</strong> access to trade ideas</li>
           <li><strong>Unlimited</strong> access to Darren's portfolio</li>
@@ -83,7 +84,7 @@
           <li><strong>Unlimited</strong> email alerts of technical indicators</li>
         </ul>
 
-        <div id="myModal" class="modal fade" role="dialog">
+        <div id="traderModal" class="modal fade" role="dialog">
           <div class="modal-dialog">
 
 
@@ -102,6 +103,7 @@
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                 <%= devise_error_messages! %>
                 <%= f.hidden_field :stripe_card_token %>
+                <%= f.hidden_field :plan_id, value: @plans[1].id %>
                 <div class="mb0">
                   <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
                 </div>
@@ -124,7 +126,7 @@
                   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                            data-description="Trader Subscription"
-                           data-amount=<%= (@plans[1]["amount"]) %>
+                           data-amount=<%= (  @plans[1]["amount"]) %>
                            data-locale="auto"></script>
 
                   <% end %>
@@ -146,14 +148,14 @@
   <div class="col-md-4">
     <div class="pricing-table pt-2 text-center feature bordered">
       <h5 class="uppercase">Standard</h5>
-      <span class="price">$300</span>
+      <span class="price amount">$300</span>
       <p class="lead">Per Month</p>
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Get Standard Access</button>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#standardModal">Get Standard Access</button>
       <ul>
         <li><strong>Unlimited</strong> access to trade ideas</li>
         <li><strong>Unlimited</strong> access to Darren's portfolio</li>
       </ul>
-      <div id="myModal" class="modal fade" role="dialog">
+      <div id="standardModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -170,7 +172,7 @@
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                 <%= devise_error_messages! %>
                 <%= f.hidden_field :stripe_card_token %>
-                <%= f.hidden_field :plan_id %>
+                <%= f.hidden_field :plan_id, value: @plans[2].id %>
                 <div class="mb0">
                   <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
                 </div>
@@ -194,7 +196,7 @@
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                          data-description="Standard Subscription"
-                         data-amount=<%= (@plans[2]["amount"]) %>
+                         data-amount=<%= (  @plans[2]["amount"]) %>
                          data-locale="auto"></script>
 
                 <% end %>

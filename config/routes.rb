@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'subscribe/new'
 
+  get 'subscribe/new'
+
   resources :uploads
   devise_for :views
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => 'users/registrations' }
