@@ -40,7 +40,7 @@
   <div class="col-1">
     <br />
       <% @posts.each do |post| %>
-      <h4><%= link_to post.title, post_path %></h4>
+      <h4><%= link_to post.title, post_path(post) %></h4>
       <% end %>
   </div>
 </div>

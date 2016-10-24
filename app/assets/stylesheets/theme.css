@@ -690,7 +690,9 @@ footer.bg-dark li,
   opacity: 0;
 }
 .background-image-holder img {
-  display: none;
+  background-size: 100% 100% !important;
+  min-width: 100%;
+
 }
 .background-multiply .background-image-holder {
   background-color: #47b475 !important;
