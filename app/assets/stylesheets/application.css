@@ -13,7 +13,9 @@
 
  *= require style
  *= require theme
+ *= require dataTables/jquery.dataTables
  *= require_self
+
  */
 
  @import "bootstrap-sprockets";

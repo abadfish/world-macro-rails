@@ -55,26 +55,8 @@ figcaption {
   text-align: left;
 }
 
-table {
-  margin: 0 0 10px !important;
-  border-top: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-}
-
 tr:nth-child(even) {
   background: #efefef;
-}
-
-
-th {
-  background: #555;
-  color: white;
-}
-
-th, td {
-  padding: 1px !important;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
 }
 
 a {

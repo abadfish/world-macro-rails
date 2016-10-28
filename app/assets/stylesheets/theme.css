@@ -266,7 +266,6 @@ p,
 ul,
 ol,
 pre,
-table,
 blockquote,
 input,
 button,
@@ -3733,11 +3732,7 @@ img {
   width: 160px;
   margin: 0;
 }
-th,
-td {
-  line-height: 16px !important;
-  word-wrap: break-word;
-}
+
 .ratings {
   margin-bottom: 24px;
 }

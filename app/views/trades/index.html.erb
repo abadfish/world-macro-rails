@@ -1,36 +1,35 @@
 
-<section class="col-lg-12">
-  <div class="col-md-5">
-  <h2>All Trades</h2>
+<section class="col-md-12">
 
-  <h3><% if user_signed_in? && current_user.admin? %>
-    <%= link_to "Add New trade", new_trade_path %>
-    <% end %></h3>
-
-
+  <h2>Current Portfolio</h2>
+  <div class="col-md-6">
+    <h3><% if user_signed_in? && current_user.admin? %>
+      <%= link_to "Add New trade", new_trade_path %>
+      <% end %></h3>
+  </div>
+  <div class="col-md-2">
     <%= form_tag trades_upload_path, multipart: true do %>
       <%= file_field_tag :file %>
       <%= submit_tag "Import Trades File" %><br />
     <% end %>
   </div>
 
+  <div class="col-md-12">
+    <table id="openTrades" class="row-border stripe compact">
+      <thead>
+        <tr><th>Trade Date</th><th>Direction</th><th>SIZE</th> <th>Product</th> <th>Execution Price</th> <th>Current Price</th> <th>Target</th> <th>Stop</th> <th>Risk *</th> <th>Target Profit *</th> <th>Realized *</th>  <th>Category</th><th>Type</th></tr>
+      </thead>
+      <tbody>
+      <% @trades.each do |trade| %>
+        <% if trade.status == "Open" %>
+        <tr>
+          <td><%=trade.trade_date %></td><td><%=trade.direction %></td><td><%=trade.size %></td><td><%=trade.product %></td><td><%=trade.price %></td><td><%=trade.current_price %></td><td><%=trade.target %></td><td><%=trade.stop %></td><td><%=trade.risk %> </td><td><%=trade.target_profit %></td><td><%=trade.realized %></td><td><%=trade.category %></td><td><%=trade.product_type %></td>
 
-    <table id=myTable><tr><th>ID</th><th>Status</th><th>Type</th><th>Trade Date</th><th>Direction</th><th>SIZE</th> <th>Product</th> <th>Execution Price</th> <th>Current Price</th> <th>Target</th> <th>Stop</th> <th>Risk *</th> <th>Target Profit *</th> <th>Realized *</th> <th>Realized P/L in USD</th> <th>Category</th></tr>
-    <% @trades.each do |trade| %>
-      <% if trade.status == "Open" %>
-      <tr>
-        <td><%=trade.id %>.</td><td><%=trade.status %></td><td><%=trade.product_type %></td><td><%=trade.trade_date %></td><td><%=trade.direction %></td><td><%=trade.size %></td><td><%=trade.product %></td><td><%=trade.price %></td><td><%=trade.current_price %></td><td><%=trade.target %></td><td><%=trade.stop %></td><td><%=trade.risk %> </td><td><%=trade.target_profit %></td><td><%=trade.realized %></td><td><%=trade.p_and_l_usd %></td><td><%=trade.category %></td>
+        </tr>
 
-      <td id="no-border"><%= link_to " Edit ", edit_trade_path(trade) %></td>
-      <td id="no-border"><%= link_to " Delete ", trade, method: :delete, data: { confirm: "Are you sure you want to delete this trade?" } %></td>
-    </tr>
-      <% end %>
-      <% end %>
-  </table>
+          <% end %>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
 </section>
-
-<script type="text/javascript">
-$(document).ready(function(){
-  $('#myTable').DataTable();
-});
-</script>
