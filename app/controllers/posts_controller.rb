@@ -25,10 +25,6 @@ class PostsController < ApplicationController
   end
 
 
-  def news_index
-
-  end
-
   def new
     @post = Post.new
     @post.comments.build()

@@ -42,6 +42,7 @@
     <%= f.text_field :product_type, placeholder: "Product Type" %>
     <%= f.submit %>
     <% end %>
+    <%= button_to :delete, @trade, method: :delete, data: { confirm: "Are you rsure you want to delete this trade?" } %>
   </div>
 
 </div>

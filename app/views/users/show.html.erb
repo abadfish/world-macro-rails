@@ -1,10 +1,14 @@
-<div class="col-md-6">
+<div class="col-md-6 ml20">
   <h2>User Profile</h2>
   <h3>Email: <%= @user.email %></h3>
 
-  <%= link_to "Edit", edit_user_registration_path %>
+
+
   <% if current_user.admin? %>
     <h4>Permission level: <%= @user.role %></h4>
     <%= link_to "Edit user rights", edit_user_path %>
+  <%  else %>
+    <h3>Subscription Level: <%= @user.role %></h3>
   <% end %>
+  <h3><%= link_to "Edit", edit_user_registration_path %></h3>
   </div>

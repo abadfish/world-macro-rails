@@ -3,8 +3,9 @@
     <%= select_tag "news" , options_for_select([["Bloomberg", "bloomberg"], ["Reuters", "reuters"], ["CNN", "cnn"], ["BBC News", "bbcnews"], ["WSJ", "thewallstreetjournal"]], (@current ||"bloomberg")) %>
   <% end %>
 
-
+<div id="news-stories">
 <% @news_headines.each do |k, v| %>
   <h5><a id="news" href="<%= v %>" target="_blank"><%= "#{k}" %></a></h5> --- <br />
 <% end %>
+</div>
 </div>
