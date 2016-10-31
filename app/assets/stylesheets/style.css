@@ -107,6 +107,24 @@ iframe {
   height: 403px;
 }
 
+.trade-table {
+  background-color: gray;
+}
+.trade-table td {
+  border: 2px solid #a9a9a9;
+}
+
+.trade-table input[type="text"],
+select {
+  margin-bottom: 0;
+  padding-left: 0;
+  text-align: center;
+  word-wrap: normal;
+}
+.trade-table input[type="placeholder"] {
+  word-wrap: normal;
+}
+
 .milk-text {
   font: bold 2.6em 'Elsie Swash Caps', cursive;
   color: white;

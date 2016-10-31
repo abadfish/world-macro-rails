@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :email
 
-  enum role: [:normal, :vip, :exclusive, :admin]
+  enum role: [:standard, :trader, :pro, :admin]
   # Include default devise modules. Others available are:
   #:lockable, :confirmable, :timeoutable
   devise :database_authenticatable, :registerable,

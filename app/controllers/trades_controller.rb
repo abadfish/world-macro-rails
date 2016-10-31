@@ -15,9 +15,8 @@ class TradesController < ApplicationController
   end
 
   def create
-    @trade = Trade.new(trade_params)
-    @trade.user_id = current_user.id
-    @trade.save
+    @trade = Trade.create(trade_params)
+
     redirect_to trades_path
   end
 

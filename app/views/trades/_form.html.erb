@@ -1,24 +1,49 @@
-<div class="col-2">
-  <h2>Trade Entry</h2>
-  <%= form_for @trade do |f| %>
-    <%= f.label :status %>
-    <%= f.select(:status, options_for_select([["open", "open"], ["closed", "closed"]])) %><br />
-    <%= f.label :direction %>
-    <%= f.text_field :direction %><br />
-    <%= f.label :size %>
-    <%= f.text_field :size %><br />
-    <%= f.label :product %>
-    <%= f.text_field :product %><br />
-    <%= f.label :price %>
-    <%= f.text_field :price %><br />
-    <%= f.label :option_strategy %>
-    <%= f.text_field :option_strategy %><br />
-    <%= f.label :strategy_price %>
-    <%= f.text_field :strategy_price %><br />
-    <%= f.label :strategy_current_px %>
-    <%= f.text_field :strategy_current_px %><br />
-    <%= f.label :trade_date %>
-    <%= f.text_field :trade_date %><br />
-    <%= f.submit %>
+<div class="col-md-12 trade-table">
+  <table class="row-border">
+    <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+    <tr>
+      <%= form_for Trade.new do |f| %>
+      <td><%= f.radio_button :status, 'open', :checked => true %><%= f.label :status, 'open' %> <%= f.radio_button :status, 'closed' %><%= f.label :status, 'closed' %></td>
+
+      <td><%= f.text_field :trade_date, placeholder: "Trade Date" %></td>
+
+      <td><%= f.text_field :direction, placeholder: "Buy/Sell" %></td>
+      <td><%= f.text_field :size, placeholder: "size" %></td>
+      <td><%= f.text_field :product, placeholder: "product" %></td>
+      <td><%= f.text_field :price, placeholder: "price" %></td>
+      <td><%= f.text_field :current_price, placeholder: "Current Px" %></td><br />
+      <td><%= f.text_field :target, placeholder: "target" %></td>
+      <td><%= f.text_field :stop, placeholder: "stop" %></td>
+      <td><%= f.text_field :risk, placeholder: "risk" %></td>
+      <td><%= f.text_field :target_profit, placeholder: "target p/l" %></td>
+      <td><%= f.text_field :realized, placeholder: "realized" %></td>
+      <td><%= f.text_field :category, placeholder: "category" %>
+    </td>
+      <td><%= f.text_field :product_type, placeholder: "Product Type" %></td>
+
+    </tr>
+    </tbody>
+  </table>
+  <%= f.submit %>
   <% end %>
 </div>

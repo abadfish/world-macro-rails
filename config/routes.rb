@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :positions
   resources :posts
   resources :trades
+  post 'trades/new', to: 'trades#create'
   post 'trades/upload', to: 'trades#upload'
   resources :comments
   resources :tags, only: [:index, :destroy]
