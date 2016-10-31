@@ -1,29 +1,55 @@
-
 <section class="col-md-12">
 
   <h2>Current Portfolio</h2>
-  <div class="col-md-12">
-    <% if user_signed_in? && current_user.admin? %>
-        <%= render partial: 'form' %>
+
+  <% if user_signed_in? && current_user.admin? %>
+    <div class="col-md-12">
+      <%= render partial: 'form' %>
+    </div>
+    <div class="col-md-2">
+      <br />  <%= form_tag trades_upload_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import Trades File", style: "btn btn-info btn-lg" %><br />
       <% end %>
-  </div>
-  <div class="col-md-2">
-    <br />  <%= form_tag trades_upload_path, multipart: true do %>
-      <%= file_field_tag :file %>
-      <%= submit_tag "Import Trades File", style: "btn btn-info btn-lg" %><br />
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
   <div class="col-md-12">
     <table id="openTrades" class="row-border stripe compact">
       <thead>
-        <tr><th>Trade Date</th><th>Direction</th><th>SIZE</th> <th>Product</th> <th>Execution Price</th> <th>Current Price</th> <th>Target</th> <th>Stop</th> <th>Risk *</th> <th>Target Profit *</th> <th>Realized *</th>  <th>Category</th><th>Type</th></tr>
+        <tr>
+          <th>Trade Date</th>
+          <th>Direction</th>
+          <th>SIZE</th>
+          <th>Product</th>
+          <th>Execution Price</th>
+          <th>Current Price</th>
+          <th>Target</th>
+          <th>Stop</th>
+          <th>Risk *</th>
+          <th>Target Profit *</th>
+          <th>Realized *</th>
+          <th>Category</th>
+          <th>Type</th>
+        </tr>
       </thead>
       <tbody>
       <% @trades.each do |trade| %>
         <% if trade.status.downcase == "open" %>
         <tr>
-          <td><%=trade.trade_date %></td><td><%=trade.direction %></td><td><%=trade.size %></td><td><%=trade.product %></td><td><%=trade.price %></td><td><%=trade.current_price %></td><td><%=trade.target %></td><td><%=trade.stop %></td><td><%=trade.risk %> </td><td><%=trade.target_profit %></td><td><%=trade.realized %></td><td><%=trade.category %></td><td><%=trade.product_type %></td>
+          <td><%=trade.trade_date %></td>
+          <td><%=trade.direction %></td>
+          <td><%=trade.size %></td>
+          <td><%=link_to trade.product, edit_trade_path(trade) %></td>
+          <td><%=trade.price %></td>
+          <td><%=trade.current_price %></td>
+          <td><%=trade.target %></td>
+          <td><%=trade.stop %></td>
+          <td><%=trade.risk %> </td>
+          <td><%=trade.target_profit %></td>
+          <td><%=trade.realized %></td>
+          <td><%=trade.category %></td>
+          <td><%=trade.product_type %></td>
         </tr>
 
           <% end %>

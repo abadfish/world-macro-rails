@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
     authorize @user
-    redirect_to user_path(@user)
+    redirect_to users_path
   end
 
   def destroy

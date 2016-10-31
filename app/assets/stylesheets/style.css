@@ -107,6 +107,22 @@ iframe {
   height: 403px;
 }
 
+/*.trade-edit label{
+  width: 48%;
+  height: 50px;
+  float: left;
+  text-align: center;
+}*/
+
+.trade-edit input[type="text"],
+select {
+  box-shadow: 0 0 5px 5px #888;
+}
+
+.trade-edit {
+
+}
+
 .trade-table {
   background-color: gray;
 }
@@ -385,7 +401,7 @@ header {
 #login a {
   font: "Audiowide", "Trebuchet MS";
   float: right;
-  margin-right: 100px;
+  margin-right: 135px;
   margin-top: -30px;
   color: #d3d3d3;
   text-align: right;

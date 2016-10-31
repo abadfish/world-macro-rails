@@ -1,6 +1,10 @@
-<h3>Update user role for <%= @user.email %></h3>
-<%= form_for @user do |f| %>
-  <%= f.label :role %>
-  <%= f.select(:role, options_for_select([["standard", "standard"], ["trader", "trader"], ["pro", "pro"], ["admin", "admin"]])) %>
-  <%= f.submit("Update") %>
-<% end %>
+<div class="col-md-5 ml20">
+
+
+  <h3>Update user role for <%= @user.email %></h3>
+  <%= form_for @user do |f| %>
+    <%= f.label :role %>
+    <%= f.select(:role, options_for_select([["standard", "standard"], ["trader", "trader"], ["pro", "pro"], ["admin", "admin"]])) %>
+    <%= f.submit("Update") %>
+  <% end %>
+</div>

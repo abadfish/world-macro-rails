@@ -130,17 +130,25 @@ Different levels of access
 
 -World Macro email accounts
 -WM bank account
--WM Business Cards
+
+DONE -WM Business Cards
 
 
 -link to disclaimer and terms of service
 
--track record pages instead of insights
+DONE but needs work -track record pages instead of insights
 
--take out some columns in positions charts
+DONE -take out some columns in positions charts
+
 -show page for each individual trade
 
 -mailer for vip and exclusive users
 
--sign up with different levels of access. charge users different amounts
-  -make more plans in swipe
+DONE -sign up with different levels of access. charge users different amounts
+DONE -make more plans in swipe
+
+
+Questions for Mendel
+
+1. Why doesn't my JS load when I click on positions. I have to refresh the page.
+2. When I click on the product I want the form to populate.

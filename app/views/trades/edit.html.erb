@@ -1,1 +1,47 @@
-<%= render 'form', trade: @trade %>
+<div class="col-md-12">
+  <h2>Edit <%= @trade.status %> Trade: <%= @trade.direction %> of <%= @trade.size %> <%= @trade.product %> @ <%= @trade.price %></h2>
+  <div class="col-md-3 trade-edit">
+    <%= form_for @trade do |f| %>
+    <%= f.radio_button :status, 'open', :checked => true %><%= f.label :status, 'open' %>
+    <%= f.radio_button :status, 'closed' %><%= f.label :status, 'closed' %><br /><br />
+    <%= f.label :trade_date %>
+    <%= f.text_field :trade_date, placeholder: "Trade Date" %>
+    <%= f.label :direction %>
+    <%= f.text_field :direction, placeholder: "Buy/Sell" %>
+    <%= f.label :size %>
+    <%= f.text_field :size, placeholder: "size" %>
+  </div>
+
+  <div class="col-md-3 trade-edit">
+    <%= f.label :product %>
+    <%= f.text_field :product, placeholder: "product" %>
+    <%= f.label :price %>
+    <%= f.text_field :price, placeholder: "price" %>
+    <%=  %>
+    <%= f.label :current_price %>
+    <%= f.text_field :current_price, placeholder: "Current Px" %>
+    <%= f.label :target %>
+    <%= f.text_field :target, placeholder: "target" %>
+  </div>
+
+  <div class="col-md-3 trade-edit">
+    <%= f.label :stop %>
+    <%= f.text_field :stop, placeholder: "stop" %>
+    <%= f.label :risk %>
+    <%= f.text_field :risk, placeholder: "risk" %>
+    <%= f.label :target_profit %>
+    <%= f.text_field :target_profit, placeholder: "target p/l" %>
+    <%= f.label :realized %>
+    <%= f.text_field :realized, placeholder: "realized" %>
+  </div>
+
+  <div class="col-md-3 trade-edit">
+    <%= f.label :category %>
+    <%= f.text_field :category, placeholder: "category" %>
+    <%= f.label :product_type %>
+    <%= f.text_field :product_type, placeholder: "Product Type" %>
+    <%= f.submit %>
+    <% end %>
+  </div>
+
+</div>

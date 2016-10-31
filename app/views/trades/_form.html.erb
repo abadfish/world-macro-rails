@@ -23,7 +23,7 @@
 
     <tr>
       <%= form_for Trade.new do |f| %>
-      <td><%= f.radio_button :status, 'open', :checked => true %><%= f.label :status, 'open' %> <%= f.radio_button :status, 'closed' %><%= f.label :status, 'closed' %></td>
+      <td><%= f.radio_button :status, 'open', :checked => true %><%= f.label :status, 'open' %><br /> <%= f.radio_button :status, 'closed' %><%= f.label :status, 'closed' %></td>
 
       <td><%= f.text_field :trade_date, placeholder: "Trade Date" %></td>
 

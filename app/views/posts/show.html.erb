@@ -21,7 +21,7 @@
       <br />
       <%= render partial: 'uploads/form', local: {post: @post, upload: @upload} %>
 
-        <p><%= link_to "Edit", edit_post_path(@post) %>
+        <p><%= link_to "Edit", edit_post_path(@post) %> | 
         <%= link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } %> Tag: <%= @post.tag_name %></p>
       <% end %>
     </div><br />
