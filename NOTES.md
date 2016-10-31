@@ -150,5 +150,12 @@ DONE -make more plans in swipe
 
 Questions for Mendel
 
-1. Why doesn't my JS load when I click on positions. I have to refresh the page.
+DONE 1. Why doesn't my JS load when I click on positions. I have to refresh the page.
 2. When I click on the product I want the form to populate.
+
+STILL NEED:
+
+-email in config file for reset password
+
+
+-export email list
