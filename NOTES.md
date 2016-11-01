@@ -155,7 +155,7 @@ DONE 1. Why doesn't my JS load when I click on positions. I have to refresh the 
 
 STILL NEED:
 
--email in config file for reset password
+DONE-email in config file for reset password
 
 
 -export email list
