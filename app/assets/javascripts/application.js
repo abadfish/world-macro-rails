@@ -18,5 +18,4 @@
 //= require jquery-fileupload/vendor/tmpl
 //= require bootstrap.min
 //= require posts
-
 //= require trades

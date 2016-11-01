@@ -17,7 +17,7 @@
     <br />
 
     <div class="col-md-5">
-      <% if user_signed_in? && current_user.admin? || current_user.vip? %>
+      <% if user_signed_in? && current_user.admin? %>
       <br />
       <%= render partial: 'uploads/form', local: {post: @post, upload: @upload} %>
 
