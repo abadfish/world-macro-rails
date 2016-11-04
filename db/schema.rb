@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021023018) do
+ActiveRecord::Schema.define(version: 20161104132631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,8 +98,8 @@ ActiveRecord::Schema.define(version: 20161021023018) do
     t.decimal  "stop"
     t.decimal  "tick_value"
     t.decimal  "risk"
-    t.decimal  "target_profit"
-    t.decimal  "realized"
+    t.integer  "target_profit"
+    t.integer  "realized"
     t.date     "exit_date"
     t.decimal  "exit_price"
     t.string   "currency"
