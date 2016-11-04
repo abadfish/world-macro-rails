@@ -40,7 +40,12 @@
           <td><%=trade.trade_date %></td>
           <td><%=trade.direction %></td>
           <td><%=trade.size %></td>
-          <td><%=link_to trade.product, edit_trade_path(trade) %></td>
+          <td><% if current_user.admin? %>
+            <%= link_to trade.product, edit_trade_path(trade)  %>
+            <% else %>
+            <%= trade.product %>
+            <% end %>
+            </td>
           <td><%=trade.price %></td>
           <td><%=trade.current_price %></td>
           <td><%=trade.target %></td>
